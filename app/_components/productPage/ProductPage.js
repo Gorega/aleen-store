@@ -4,7 +4,7 @@ import styles from "../../_styles/ProductPage.module.css";
 import Image from "next/image";
 import Policy from "./Policy";
 import Form from "./Form";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
 import { ContextApi } from "@/app/_util/GlobalContext";
 import Counter from "../Counter";
@@ -75,7 +75,11 @@ export default function ProductPage({product,sectionTitle}){
                 <div className={styles.quantity}>
                     <Counter value={currentCounterValue} setValue={setCurrentCounterValue} />
                     <button onClick={()=> {
-                        checkIsInCart(product._id) ? removeFormCartHandler(product._id) : addToCartHandler(product,currentCounterValue)
+                        if(checkIsInCart(product._id)){
+                            removeFormCartHandler(product._id)
+                        }else{
+                            addToCartHandler(product,currentCounterValue)
+                        }
                     }}>{checkIsInCart(product._id) ? "حذف من عربة التسوق" : "اضف الى عربة التسوق"}</button>
                 </div>
                 <div className={styles.buy}>
