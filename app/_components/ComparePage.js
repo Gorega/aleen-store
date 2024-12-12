@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import styles from "../_styles/ComparePage.module.css";
 import Image from "next/image";
 import { ContextApi } from "../_util/GlobalContext";

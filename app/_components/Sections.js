@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import styles from "../_styles/Sections.module.css";
 import Image from "next/image";
 
-export default async function Sections({storeMenu}){
+export default function Sections({storeMenu}){
 
     const router = useRouter();
     

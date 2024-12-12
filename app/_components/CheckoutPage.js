@@ -9,7 +9,6 @@ export default function CheckoutPage(){
 
     const [products,setProducts] = useState([]);
     const [discountCode,setDiscountCode] = useState("");
-    const [loading,setLoading] = useState(false);
     const [formDataStatus,setFormDataStatus] = useState({});
     const [formErrors,setFormErrors] = useState({});
 
