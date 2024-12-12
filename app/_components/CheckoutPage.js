@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import styles from "../_styles/Checkout.module.css";
 import Image from "next/image";
 import { ContextApi } from "../_util/GlobalContext";
+import {url} from "../../mongoose/url";
 
 export default function CheckoutPage(){
 
@@ -51,7 +52,7 @@ export default function CheckoutPage(){
 
         setFormDataStatus({status:"pending"})
         setFormErrors({})
-        const response = await fetch(`/api/orders`,{
+        const response = await fetch(`${url}/api/orders`,{
             method:"POST",
             headers: { "Content-Type": "application/json" },
             body:JSON.stringify(
