@@ -1,4 +1,4 @@
-import { useFetch } from "@/app/_util/useFetch";
+import { fetchData } from "../../../_util/fetchData";
 import CollectionPage from "../../../_components/CollectionPage";
 import {url} from "@/mongoose/url";
 
@@ -10,10 +10,9 @@ const grapSection = async (section)=>{
 
 export default async function Collection({params}){
     const {section} = await params;
-
-    const products = await useFetch(`api/products/${section}`);
-    const sections = await useFetch("api/sections");
     const singleSection = await grapSection(section);
+    const products = await fetchData(`api/products/${section}`);
+    const sections = await fetchData("api/sections");    
 
     return <>
         <CollectionPage

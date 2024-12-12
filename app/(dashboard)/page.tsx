@@ -3,12 +3,13 @@ import Sections from "../_components/Sections";
 import Shopping from "../_components/shopping/Shopping";
 import Popular from "../_components/popular/Popular";
 import Services from "../_components/services/Services";
-import { useFetch } from "../_util/useFetch";
+import { fetchData } from "../_util/fetchData";
+
+
+const sections = await fetchData("api/sections");
+const products = await fetchData("api/products");
 
 export default async function Home() {
-  const sections = await useFetch("api/sections");
-  const products = await useFetch("api/products");
-
   return (
     <>
     <Header />

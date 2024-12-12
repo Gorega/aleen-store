@@ -4,11 +4,9 @@ import styles from "../../_styles/shopping/Shopping.module.css";
 import Image from "next/image";
 import List from "../List";
 import { useRef, useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 
 
 export default function Shopping({sections}){
-    const router = useRouter();
     const [products,setProducts] = useState([]);
     const [currentTag,setCurrentTag] = useState("makeup");
     const scrollAmount = 250;
