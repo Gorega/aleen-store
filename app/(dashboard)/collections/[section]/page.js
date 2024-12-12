@@ -8,7 +8,7 @@ const grapSection = async (section)=>{
     return data;
 }
 
-export default async function Collection({params}){
+export default async function page({params}){
     const {section} = await params;
     const singleSection = await grapSection(section);
     const products = await fetchData(`api/products/${section}`);
