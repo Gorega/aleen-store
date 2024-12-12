@@ -3,7 +3,7 @@
 import { useContext, useEffect, useState } from "react";
 import styles from "../_styles/Checkout.module.css";
 import Image from "next/image";
-import { ContextApi } from "../_util/globalContext";
+import { ContextApi } from "../_util/GlobalContext";
 
 export default function CheckoutPage(){
 

@@ -6,7 +6,7 @@ import Policy from "./Policy";
 import Form from "./Form";
 import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
-import { ContextApi } from "@/app/_util/globalContext";
+import { ContextApi } from "@/app/_util/GlobalContext";
 import Counter from "../Counter";
 import { useRouter } from "next/navigation";
 
