@@ -1,0 +1,115 @@
+[{
+    "title":"العناية بالبشرة",
+    "logo":"https://storage.googleapis.com/aleen_store/sections/face-care-header-background.jpg",
+    "section":"skin",
+    "order":1,
+    "sub":[{
+        "title":"بكجات العناية بالبشرة",
+        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/eyelashes.avif"
+    },{
+        "title":"تونر للوجه",
+        "logo":""
+    },{
+        "title":"كريم ايدين",
+        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/cream.avif"
+    },{
+        "title":"كريم وغسول للوجه والجسم",
+        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/sheet-mask.avif"
+    },{
+        "title":"ماسكات",
+        "logo":""
+    },{
+        "title":"مرطبات شفايف",
+        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/lipstick.avif"
+    },{
+        "title":"مقشر للجسم",
+        "logo":""
+    },{
+        "title":"مقوي اظافر",
+        "logo":""
+    }],
+    "views":[{
+        "title":"مجموعة Shower",
+        "logo":"",
+        "price":30
+    },{
+        "title":"ماء الورد",
+        "logo":"",
+        "price":20
+    },{
+        "title":"مرطب شفايف",
+        "logo":"",
+        "price":40
+    }]
+},{
+    "title":"مكياج",
+    "logo":"https://storage.googleapis.com/aleen_store/sections/make_up.webp",
+    "section":"makeup",
+    "order":2,
+    "sub":[{
+        "title":"مسكارة وايلاينر",
+        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/eyeliner.avif"
+    },{
+        "title":"مورد خدود",
+        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/blush-brush.avif"
+    },{
+        "title":"فراشي مكياج",
+        "logo":""
+    },{
+        "title":"كريم اساس وكونسيلر",
+        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/concealer.avif"
+    },{
+        "title":"جلوس",
+        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/wavy-hair.avif"
+    }],
+    "views":[]
+},{
+    "title":"كريمات",
+    "logo":"https://storage.googleapis.com/aleen_store/sections/craems.webp",
+    "order":8,
+    "sub":[],
+    "section":"creams",
+    "views":[]
+},{
+    "title":"كاسات",
+    "logo":"https://storage.googleapis.com/aleen_store/sections/glasses.webp",
+    "order":9,
+    "sub":[],
+    "section":"cups",
+    "views":[]
+},{
+    "title":"اكسسوارات",
+    "logo":"https://storage.googleapis.com/aleen_store/sections/accessories.webp",
+    "order":7,
+    "sub":[],
+    "section":"accessories",
+    "views":[]
+},{
+    "title":"العناية بالجسم",
+    "logo":"https://storage.googleapis.com/aleen_store/sections/bodycare.webp",
+    "order":4,
+    "sub":[],
+    "section":"body",
+    "views":[]
+},{
+    "title":"العناية بالشعر",
+    "logo":"https://storage.googleapis.com/aleen_store/sections/haircare.webp",
+    "order":3,
+    "sub":[],
+    "section":"hair",
+    "views":[]
+},{
+    "title":"ماسكات",
+    "logo":"https://storage.googleapis.com/aleen_store/sections/masks.webp",
+    "order":6,
+    "sub":[],
+    "section":"masks",
+    "views":[]
+},{
+    "title":"عطور",
+    "logo":"https://storage.googleapis.com/aleen_store/sections/perfumes.webp",
+    "order":5,
+    "sub":[],
+    "section":"perfumes",
+    "views":[]
+}]

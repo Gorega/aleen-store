@@ -1,0 +1,701 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:1px solid #d9d9d9;
+    height:100px;
+    width: auto;
+    position: relative;
+    top:0;
+    z-index: 3;
+    color: inherit;
+    color:black;
+    padding:15px;
+}
+
+.nav.transparent{
+    position: absolute;
+    width: 100%;
+    color:#fff;
+    left: 0;
+}
+
+.nav.transparent .logo,.nav.transparent .phoneListButton{
+    margin-right: 40px;
+}
+
+.nav .phoneListButton{
+    display: none;
+    cursor: pointer;
+}
+
+.nav .phoneListButton span svg{
+    width:40px;
+    height:40px;
+    color:inherit;
+}
+
+.nav .logo{
+    font-size:24px;
+    text-wrap: nowrap;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+
+.nav .list ul,.nav .control ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav .list ul li{
+    position: relative;
+    margin-left:3rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    text-wrap: nowrap;
+}
+
+.nav .list ul li svg{
+    width:15px;
+    height:15px;
+    margin-right:3px;
+}
+
+.nav .control ul{
+    margin:0;
+    padding:0;
+    display: flex;
+    gap:15px;
+}
+
+.nav .control ul li{
+    cursor: pointer;
+    position: relative;
+}
+
+.nav .control ul li span{
+    display: block;
+    font-size:10px;
+    position: absolute;
+    top:-5px;
+    left:-7px;
+    width: 16px;
+    height:16px;
+    border-radius: 50%;
+    background-color: black;
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav .control ul li svg{
+    width:30px;
+    height:30px;
+}
+
+.nav .searchBar{
+    width: 20%;
+}
+
+.nav .searchBar input{
+    width: 100%;
+    height:100%;
+    padding:15px;
+    font-size:12px;
+    font-weight: 400;
+    text-align: right;
+}
+
+.phoneList{
+    display: none;
+    position: absolute;
+    top:0;
+    right: 0;
+    height:100vh;
+    width: 400px;
+    color:black;
+    text-align: right;
+    z-index: 4;
+    padding:15px;
+    background-color: #fff;
+    animation-name: slideInFromRight;
+    animation-duration: .7s;
+}
+
+.phoneList ul{
+    padding:0;
+}
+
+.phoneList ul li{
+    display: block;
+    padding:15px;
+    font-weight: 400;
+    cursor: pointer;
+    border-bottom: 1px solid #d9d9d9;
+    line-height: 1.9;
+    transition: .2s ease-in-out;
+}
+
+.phoneList ul li:hover{
+    margin-right: 15px;;
+
+}
+
+.phoneList ul li .submenu{
+    animation-name: submenuAnimate;
+    animation-duration: .2s;
+    animation-timing-function: ease-in-out;
+}
+
+.phoneList ul li ul li:last-of-type{
+    border:none;
+}
+
+.phoneList ul li ul li{
+    transition: .2s ease-in-out;
+}
+
+.phoneList ul li span{
+    position: absolute;
+    left:30px;
+    transition: .2s ease-in-out;
+}
+
+.phoneList ul li span.active{
+    transform: rotate(45deg);
+}
+
+.phoneList ul li svg{
+    width: 20px;
+    height:20px;
+}
+
+.phoneList h3{
+    padding:15px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.phoneList .close{
+    position: absolute;
+    top:0;
+    left:-46px;
+    width: 45px;
+    height:45px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color:#fff
+}
+
+.placeholder{
+    position: absolute;
+    top:50px;
+    right:0;
+    width: auto;
+    min-width: 800px;
+    height:auto;
+    min-height:400px;
+    background-color: #fff;
+    color:black;
+    padding:20px;
+    border-radius: 15px;
+    animation-name: placeholderAnimate;
+    animation-duration: .3s;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.placeholder .content{
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.placeholder .content ul{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    padding:0;
+}
+
+.placeholder .content ul li{
+    position: relative;
+    margin-bottom:12px;
+    text-align: right;
+    font-size:14px;
+    transition: .2s ease-in-out;
+    text-wrap: nowrap;
+}
+
+.placeholder .content ul li::after{
+    content:"";
+    position:absolute;
+    bottom:-5px;
+    right:0;
+    width: 20px;
+    height:1px;
+    border-bottom:1px solid #d9d9d9;
+}
+
+.placeholder .content ul li:hover{
+    margin-right:5px;
+}
+
+.placeholder .content .views{
+    margin-left:25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.placeholder .content .views .view{
+    margin-left:15px;
+}
+
+.placeholder .content .views .view .image{
+    width:300px;
+    height:320px;
+}
+
+.placeholder .content .views .view .image .img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.placeholder .content .views .view .info{
+    margin-top:-15px;
+}
+
+.placeholder .content .views .view .info p{
+    margin-top:-15px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.cart{
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 400px;
+    height:100%;
+    background-color: #fff;
+    z-index: 4;
+    /* animation-name: slideInFromLeft; */
+    animation-duration: .7s;
+    color:black;
+}
+
+.cart .head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart .head h3{
+    font-size:16px;
+    font-weight: 500;
+}
+
+.cart .head button{
+    background-color: #F1F1F1;
+    width:33px;
+    height:33px;
+    border-radius: 50%;
+    color:black;
+    border:none;
+    cursor: pointer;
+}
+
+.cart .top{
+    position: absolute;
+    top:0;
+    right:0;
+    width: 100%;
+}
+
+.cart .top .head{
+    padding:0 15px;
+}
+
+.cart .menu{
+    margin-top:15px;
+}
+
+.cart .menu ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border:1px solid #d9d9d9;
+    margin: 0;
+    padding:0;
+}
+
+.cart .menu ul li{
+    flex:1;
+    text-align: center;
+    padding:7px 0;
+    margin:0;
+}
+
+.cart .menu ul li.active{
+    border-bottom:1px solid black;
+}
+
+.cart .menu ul li:first-of-type{
+    border-left:1px solid #d9d9d9;
+}
+
+.cart .menu ul li svg{
+    width: 27px;
+    height:27px;
+}
+
+.cart .body,.cart .empty{
+    width: 100%;
+    height:100%;
+    overflow: auto;
+    position: relative;
+    top:140px;
+}
+
+.cart .body .items{
+    height: 550px;
+    overflow: auto;
+    padding:0 15px;
+}
+
+.cart .body .items .item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:25px;
+    width: 100%;
+}
+
+.cart .body .items .item .image{
+    width: 100px;
+    height:120px;
+}
+
+.cart .body .items .item .image .img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.cart .body .items .item .content{
+    margin-right:15px;
+    flex:1;
+}
+
+.cart .body .items .item .content h4{
+    margin:0;
+    font-size:17px;
+    margin-bottom:7px;
+}
+
+.cart .body .items .item .content span{
+    font-size:15px;
+    font-weight: 400;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.cart .body .items .item .content .counter{
+    margin-top:15px;
+    display: flex;
+    align-items: center;
+    gap:40px;
+}
+
+.cart .body .items .item .content .counter span.addedPrice{
+    color:red;
+}
+
+.cart .body .items .item .control{
+    font-size:15px;
+    color:black;
+    cursor: pointer;
+    text-align: left;
+    border:1px solid #d9d9d9;
+    border-radius: 50%;
+    width: 27px;
+    height:27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart .body .advantages{
+    border: 1px solid #d9d9d9;
+    padding:7px;
+    margin-bottom:30px;
+}
+
+.cart .body .advantages ul{
+    margin:0;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:25px;
+}
+
+.cart .body .advantages ul li{
+    background-color: #F1F1F1;
+    border-radius: 25px;
+    width: 46px;
+    height:46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart .body .advantages ul li:hover{
+    background-color: black;
+    color:#fff
+}
+
+.cart .body .advantages ul li svg{
+    width: 27px;
+    height:27px
+}
+
+.cart .payment{
+    position: absolute;
+    bottom:0;
+    right:0;
+    width: 100%;
+    height:160px;
+    background-color: #F1F1F1;
+    margin:0;
+}
+
+.cart .payment div{
+    padding:7px 15px;
+}
+
+.cart .payment .total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart .payment .submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart .payment button{
+    width: 80%;
+    height:40px;
+    background-color: black;
+    color:#fff;
+    border:none;
+    cursor: pointer;
+    font-size: 17px;
+    transition: .2s ease-in-out;
+}
+
+.cart .payment button:hover{
+    background-color:#3FC1AE;
+}
+
+.cart .payment button.inactive{
+    background-color: rgba(0,0,0,.7);
+    cursor:no-drop;
+    pointer-events: none;
+}
+
+.cart .empty{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.cart .content h4{
+    font-size:16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.cart .content button{
+    background-color: black;
+    color:#fff;
+    padding:7px 15px;
+    width:160px;
+    height:40px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: .2s ease-in-out;
+    border:none;
+}
+
+.cart .content button:hover{
+    background-color: #3FC1AE;
+}
+
+.cart .content svg{
+    width:44px;
+    height:44px;
+}
+
+.cart .content p{
+    font-size:15px;
+    font-weight: 300;
+}
+
+.form{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,.4);
+}
+
+.form .in{
+    box-sizing: border-box;
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height:max-content;
+    min-height:300px;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding:15px;
+    animation-name: slideFromBottom;
+    animation-duration: .2s;
+}
+
+.form h2{
+    font-size:18px;
+    font-weight: 600;
+}
+
+.form p{
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.form textarea,.form input{
+    height:160px;
+    width: 100%;
+    padding-right:7px;
+    border:1px solid #d9d9d9;
+    margin-bottom:10px;
+}
+
+.form input{
+    height:40px;
+}
+
+.form button{
+    width: 100%;
+    height:40px;
+    border:none;
+    text-align: center;
+    font-size:18px;
+    padding:7px 15px;
+    cursor: pointer;
+}
+
+.form button.save{
+    background-color: black;
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.form button.cancel{
+    border: 1px solid #d9d9d9;;
+}
+
+@media  (min-width: 320px) and (max-width:762px){
+    .phoneList{
+        width:65%
+    }
+}
+
+@media  (min-width: 320px) and (max-width:1360px){
+
+    .phoneList{
+        display: block;
+    }
+
+    .nav .phoneListButton{
+        display: block;
+        order:1;
+    }
+
+    .nav .logo{
+        order:2;
+    }
+
+    .nav .list,.nav .searchBar{
+        display: none
+    }
+
+    .nav .control{
+        order:3;
+    }
+
+}
+
+@keyframes slideInFromRight {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromBottom {
+    from{
+        transform: translateY(100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes submenuAnimate {
+    from{
+        margin-top:-30px;
+    }
+    to{
+        margin-top:0;
+    }
+}
+
+@keyframes placeholderAnimate {
+    from{
+        opacity: 0;
+        visibility: hidden;
+        margin-top: -40px;
+    }
+    to{
+        opacity: 1;
+        visibility: visible;
+        margin-top: 0;
+    }
+}

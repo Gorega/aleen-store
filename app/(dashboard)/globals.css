@@ -1,0 +1,58 @@
+html,body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body a{
+    text-decoration: none;
+    color:unset
+}
+
+.container{
+    margin:auto;
+    padding-left:15px;
+    padding-right:15px;
+}
+
+.modal{
+    z-index: 4;
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+}
+
+
+/* small devices */
+@media  (min-width: 320px) and (max-width:480px){
+    .container {
+        width: 90%; /* Full width */
+    }
+}
+
+/* Medium devices */
+
+@media  (min-width: 481px) and (max-width:768px) {
+    .container {
+        width: 90%; /* Slight margin on sides */
+    }
+}
+
+/* large devices */
+
+@media  (min-width: 769px) and (max-width:1200px) {
+    .container {
+        width: 85%;
+    }
+}
+
+/* extra large devices */
+
+/* @media (min-width: 1025px) and (max-width:1270px){
+    .container {
+        width: 80%;
+    }
+} */

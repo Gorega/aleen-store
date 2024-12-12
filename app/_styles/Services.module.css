@@ -1,0 +1,66 @@
+.services{
+    margin-top:120px;
+    margin-bottom:50px;
+}
+
+.services .sections,.services .sections .section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.services .sections{
+    flex-wrap: wrap;
+}
+
+.services .sections .section svg{
+    width:80px;
+    height:80px;
+}
+
+.services .sections .section .content{
+    margin-right:15px;
+}
+
+.services .sections .section .content h3{
+    font-size:17px;
+    line-height: .7;
+}
+
+.services .sections .section .content p{
+    color:#878787;
+    font-size:13px;
+}
+
+.services .transition{
+    display: none;
+}
+
+.services .transition ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services .transition ul li{
+    font-size:70px;
+    margin-left:10px;
+    cursor: pointer;
+    color:#878787;
+    text-decoration: none;
+}
+
+.services .transition ul li::selection{
+    display: none
+}
+
+.services .transition ul li.active,.services .transition ul li:hover{
+    color:black;
+}
+
+@media (min-width:320px) and (max-width:1200px){
+    .services .transition{
+        display: block;
+    }
+}

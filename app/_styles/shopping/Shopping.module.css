@@ -1,0 +1,112 @@
+.main{
+    min-height: 800px;
+}
+
+.head{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.head h2{
+    font-size:24px;
+    font-weight: 700;
+    margin:0 5rem;
+    text-wrap: nowrap;
+}
+
+.head .holder{
+    width: 70%;
+}
+
+.head .sections{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 2;
+    margin-bottom:36px;
+}
+
+.head .sections .section{
+    cursor: pointer;
+    display: block;
+    margin-left:3rem;
+    text-align: center;
+    border:1px solid #d9d9d9;
+    border-radius: 25px;
+    padding:25px 100px;
+    height:160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.head .sections .section:hover,.head .sections .section.active{
+    background-color: #d9d9d9;
+}
+
+.head .sections .section .img{
+    width:50px;
+    height:50px;
+}
+
+.head .control{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    height: 100%;
+}
+
+.head .holder .control .rightArrow{
+    position: relative;
+    right:-4%
+}
+
+
+.head span svg{
+    width: 35px;
+    height:35px
+}
+
+
+@media  (min-width: 320px) and (max-width:1270px){
+
+    .head{
+        display: block;
+    }
+
+    .head h2{
+        text-align: center;
+        margin-bottom:3rem
+    }
+
+    .head .holder{
+        width: 100%;
+    }
+
+    .head .holder .control{
+        position: relative;
+        margin:auto;
+        margin-bottom:1.4rem;
+    }
+
+    .head .holder .control .rightArrow{
+        right:0;
+    }
+
+    .head .sections{
+        width: 90%;
+    }
+
+    .head .sections::selection{
+        background-color: transparent;
+    }
+
+}

@@ -1,0 +1,128 @@
+.compare{
+    margin-top:120px;
+    margin-bottom:120px;
+    text-align: center;
+    width: 90vw;
+    overflow-x: auto;
+
+}
+
+.compare table{
+    margin:0 auto;
+    border:1px solid #E6E6E6;
+    display: flex;
+    width: fit-content;
+    flex-wrap: nowrap;
+}
+
+.compare table th,.compare table td{
+    border:1px solid #E6E6E6;
+    padding:7px 15px;
+    height:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compare table th{
+    justify-content: flex-start;
+}
+
+.compare table th:first-of-type{
+    height:152px;
+}
+
+.compare table td{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size:14px;
+    font-weight: 300;
+    width: 300px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.compare table td button{
+    background-color: black;
+    color:#fff;
+    cursor: pointer;
+    padding:7px 15px;
+}
+
+.compare table td:first-of-type{
+    height: 152px;
+}
+
+.compare table td .view{
+    width: 120px;
+    height:120px;
+    margin-bottom:15px;
+}
+
+.compare table td .view .img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.compare table .tags{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 360px;
+}
+
+.compare .empty span svg{
+    width: 100px;
+    height:100px;
+}
+
+.compare .empty h1{
+    margin:0;
+    margin-top:25px;
+    font-size:22px;
+    font-weight: 500;
+}
+
+.compare .empty p{
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+@media (max-width:992px) {
+    .compare table{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .compare table .tags{
+        display: none
+    }
+
+    .compare table td{
+        position: relative;
+        height:70px;
+        justify-content: flex-end;
+    }
+
+    .compare table td::before{
+        content:attr(data-title);
+        position: absolute;
+        top:0;
+        left:50%;
+        width: 80%;
+        height:40px;
+        background-color: #d9d9d9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-50%);
+        font-weight: 600;
+    }
+
+    .compare table td:first-of-type:before{
+        display: none;
+    }
+}

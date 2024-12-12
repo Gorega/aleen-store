@@ -1,0 +1,35 @@
+.head{
+    background-color: #F0F3F4;
+    height:140px;
+    width: 100%;
+    padding:25px;
+    border-radius: 15px;
+    grid-area: head;
+}
+
+.head .in{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head .in .searchBar{
+    width: 50%;
+}
+
+.head .in .searchBar input{
+    width: 100%;
+    height:40px;
+    border:1px solid #d9d9d9;
+    padding-left:10px;
+}
+
+.head .in .control ul{
+    list-style: none;
+    display: flex;
+    gap:30px;
+}
+
+.head .in .control ul li{
+    font-size:15px;
+}

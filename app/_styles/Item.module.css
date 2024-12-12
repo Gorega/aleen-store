@@ -1,0 +1,345 @@
+.item{
+    animation-name: animate;
+    animation-duration: 1s;
+    cursor: pointer;
+    position: relative;
+    margin-bottom:36px;
+}
+
+.item.tableView{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding:10px 25px;
+    margin-bottom:25px;
+    cursor:auto;
+}
+
+.item.tableView .image{
+    width: 240px;
+    height:280px;
+}
+
+.item.tableView .image .productImg{
+    width: 100%;
+    height: 100%;
+}
+
+
+.item.tableView .text{
+    margin-right:50px;
+}
+
+
+.item .control .favourite,.item .control .compare{
+    position: absolute;
+    top:6px;
+    left:6px;
+    background-color: #fff;
+    color:black;
+    width: 33px;
+    height:33px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s ease-in-out;
+}
+
+.item .control .favourite.active{
+    color:red;
+}
+
+.item .control .compare{
+    visibility: hidden;
+    transition: .2s ease-in-out;
+    top:0;
+}
+
+.item:hover .compare{
+    visibility: visible;
+    top:46px;
+}
+
+.item .control .favourite span,.item .control .compare span{
+    display: none;
+    position: relative;
+}
+
+.item .control .favourite:hover,.item .control .compare:hover{
+    background-color: black;
+    color:#fff;
+}
+
+.item .control .favourite:hover span,.item .control .compare:hover span{
+    display: block;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left:40px;
+    background-color: black;
+    color:#fff;
+    border-radius: 15px;
+    font-size:11px;
+    text-align: center;
+    width: 110px;
+    height:26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item .control .buttons{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom:70px;
+    left:0;
+    transform: translateX(-50%);
+    height:40px;
+    color:black;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:15px;
+    transition: .2s ease-in-out;
+}
+
+.item:hover .buttons{
+    visibility: visible;
+    left:50%;
+    opacity: 1;
+}
+
+
+.item .control .buttons .add,.item .control .buttons .show{
+    background-color: #fff;
+    padding:7px 10px;
+    text-wrap: nowrap;
+    border-radius: 25px;
+    font-size: 12px;
+    transition: .2s ease-in-out;
+    position: relative;
+}
+
+.item .control .buttons .add .overlay,.item .control .buttons .show .overlay{
+    position: relative;
+    display: none;
+    animation-name: slideIn;
+    animation-duration: .2s;
+}
+
+.item .control .buttons .add:hover .overlay,.item .control .buttons .show:hover .overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color:#fff;
+    font-size:11px;
+    font-weight: 500;
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    border-radius: 25px;
+}
+
+.item.tableView .buttons{
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    bottom:10px;
+    left:10px;
+    transform:none;
+    height:40px;
+    color:black;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:15px;
+    transition: .2s ease-in-out;
+}
+
+.item.tableView .buttons .add,.item.tableView .buttons .show{
+    border:1px solid #d9d9d9;
+}
+
+.item .control svg{
+    width: 22px;
+    height:22px;
+}
+
+.item .image{
+    position: relative;
+    height: 500px;
+}
+
+.item .productImg{
+    width: 100%;
+    height:100%;
+    object-fit: cover; 
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.item .slidein{
+    display: none;
+    animation-name: fadein;
+    animation-duration: 1s;
+}
+
+.item:hover .slidein{
+    display: block;
+}
+
+.item .text h4{
+    font-size:16px;
+    margin:0;
+    padding:10px;
+    flex-wrap: nowrap;
+}
+
+.item.tableView .text h4{
+    padding:0;
+}
+
+.item .text span{
+    font-size:12px;
+    font-weight: 400;
+}
+
+@media (min-width: 320px) and (max-width:768px){
+    .item .image{
+        height:200px;
+    }
+}
+
+@media  (min-width: 766px) and (max-width:992px){
+    .item .image{
+        height:270px;
+    }
+}
+
+@media  (min-width: 990px) and (max-width:1200px){
+    .item .image{
+        height:310px;
+    }
+}
+
+@media (max-width:1200px) {
+
+    .item{
+        border:1px solid #d9d9d9;
+        margin-bottom:70px;
+    }
+
+    .item.tableView{
+        height: 360px;
+    }
+
+    .item.tableView .image{
+        position: relative;
+    }
+
+    .item.tableView .text{
+        position: relative;
+    }
+
+    .item.tableView .text h4,.item.tableView .text span{
+        position: relative;
+        top:0;
+        right:0;
+    }
+
+    .item.tableView .text span{
+        margin-top: 10px;
+    }
+
+    .item .control .buttons{
+        visibility: visible;
+        opacity: 1;
+        position: relative;
+        bottom:0;
+        left:0;
+        color:black;
+        cursor: pointer;
+        gap:0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transform: none;
+        border-top:1px solid #d9d9d9;
+        text-align: center;
+    }
+
+    .item.tableView .control .buttons{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    .item.tableView .buttons .add,.item.tableView .buttons .show{
+        border:none
+    }
+
+    .item .control .buttons .add,.item .control .buttons .show{
+        border-radius: unset;
+        width: 50%;
+    }
+
+    .item .control .buttons .add,.item.tableView .buttons .add{
+        border-left: 1px solid #d9d9d9;
+    }
+
+    .item.tableView p{
+        display: none;
+    }
+    
+    .item .text h4{
+        position: absolute;
+        bottom:-50px;
+        right: 0;
+    }
+    
+    .item .text span{
+        position: absolute;
+        bottom:-60px;
+        right: 10px;
+    }
+}
+
+
+@keyframes animate {
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes slideIn {
+    from{
+        transform: translateY(5px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadein {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

@@ -1,0 +1,32 @@
+.popular{
+    margin-top:100px;
+    position: relative;
+}
+
+.popular h2{
+    text-align: center;
+}
+
+.popular h2 span{
+    display: block;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.popular h2::after{
+    content: "";
+    position: absolute;
+    top:10px;
+    left:0;
+    width: 43%;
+    border:1px solid #e6e6e6
+}
+
+.popular h2::before{
+    content: "";
+    position: absolute;
+    top:10px;
+    right:0;
+    width: 43%;
+    border:1px solid #e6e6e6
+}

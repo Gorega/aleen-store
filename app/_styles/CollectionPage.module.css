@@ -1,0 +1,149 @@
+.collection{
+    margin-top:60px;
+    margin-bottom:60px;
+    text-align: center;
+}
+
+.collection h2{
+    font-size:32px;
+    font-weight: 700;
+    margin-bottom:10px;
+}
+
+.collection span{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.collection .sections{
+    width: 60%;
+    margin:36px auto
+}
+
+.collection ul{
+    list-style: none;
+    display: inline-flex;
+}
+
+.collection .sections .tags{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.collection .sections .tags .list{
+    overflow-x: hidden;
+    display: inline-flex;
+    width: 90%;
+    z-index: 2;
+    flex-wrap: nowrap;
+    padding:0;
+}
+
+.collection .sections .tags .list li{
+    cursor: pointer;
+    text-wrap: nowrap;
+    min-width: 100px;
+}
+
+.collection .sections .tags button{
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.collection .sections .tags button svg{
+    width: 50px;
+}
+
+.collection .sections .tags svg{
+    height:24px;
+}
+
+.collection .filter{
+    margin:120px 0 40px 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collection .filter .symbol{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.collection .filter .order{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collection .filter::before{
+    content:"";
+    position: absolute;
+    top:-50px;
+    left:0;
+    width: 100%;
+    border-bottom:1px solid #D9D9D9;
+}
+
+.collection .filter .order ul{
+    border:1px solid #d9d9d9;
+    padding:7px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 140px;
+}
+
+.collection .filter ul li{
+    cursor: pointer;
+}
+
+.collection .filter .order .more select{
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    margin-right:20px;
+    padding:7px 15px;
+    border: none;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.collection .filter .symbol svg{
+    width: 24px;
+    height:24px
+}
+
+.collection .filter .order ul li svg{
+    height:17px;
+    fill:#868686;
+}
+
+@media(max-width:768px){
+
+    .collection .sections .tags{
+        position: relative;
+    }
+
+}
+
+@media (max-width:1200px){
+
+    .collection .filter .order ul{
+        display: none;
+    }
+
+    .collection .sections{
+        margin-top:36px;
+        width: 100%;
+    }
+    
+}

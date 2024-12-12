@@ -1,0 +1,6 @@
+.dashboard{
+    display: grid;
+    grid-template-areas: "nav nav head head head"
+    "nav nav body body body"
+    "nav nav body body body";
+}

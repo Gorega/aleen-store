@@ -1,0 +1,54 @@
+.list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:25px;
+    width: 70%;
+    margin:auto;
+}
+
+.list.forthView{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.list.fifthView{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+
+.list.tableView{
+    display: block;
+    text-align: right;
+}
+
+.more{
+    display: flex;
+    justify-content: center;
+    margin-top:40px;
+}
+
+.more button{
+    background-color: black;
+    border:1px solid #d9d9d9;
+    padding:10px 15px;
+    width:150px;
+    height:40px;
+    font-size:15px;
+    cursor: pointer;
+    color:#fff;
+    transition: .2s ease-in-out;
+}
+
+.more button:hover{
+    background-color: #57CDBF;;
+}
+
+@media (max-width:1200px){
+
+    .list,.list.forthView,.list.fifthView{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width: 100%;
+    }
+    
+}

@@ -1,0 +1,169 @@
+[{
+    "views":["https://storage.googleapis.com/aleen_store/makeup/makeup-product-e.webp","https://storage.googleapis.com/aleen_store/makeup/makeup-product-q.webp","https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp"],
+    "title":"جلوس بديل شيجلام",
+    "price":30,
+    "desc":"وصف لمنتج جلوس بديل شيجلام",
+    "stars":5,
+    "section":"makeup",
+    "more":[{
+        "title":"جلوس وردي فواكه",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-q.webp",
+        "price":40
+    },{
+        "title":"تنت جيلي",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp",
+        "price":30
+    },{
+        "title":"سيروم الرموش mavala",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp",
+        "30":20
+    },{
+        "title":"جلوس وردي فواكه",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-w.webp",
+        "price":40
+    }]
+},{
+    "views":["https://storage.googleapis.com/aleen_store/makeup/makeup-product-q.webp","https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp","https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp"],
+    "title":"جلوس وردي فواكه",
+    "price":40,
+    "desc":"وصف لمنتج جلوس وردي فواكه",
+    "stars":4,
+    "section":"makeup",
+    "more":[{
+        "title":"جلوس وردي فواكه",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-w.webp",
+        "price":40
+    },{
+        "title":"تنت جيلي",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp",
+        "price":30
+    },{
+        "title":"سيروم الرموش mavala",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp",
+        "30":20
+    },{
+        "title":"جلوس وردي فواكه",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-w.webp",
+        "price":40
+    }]
+},{
+    "views":["https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp","https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp","https://storage.googleapis.com/aleen_store/makeup/makeup-product-w.webp"],
+    "title":"تنت جيلي",
+    "price":30,
+    "desc":"وصف لمنتج تنت حلي",
+    "stars":7,
+    "section":"makeup",
+    "more":[{
+        "title":"جلوس وردي فواكه",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-w.webp",
+        "price":40
+    },{
+        "title":"تنت جيلي",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp",
+        "price":30
+    },{
+        "title":"سيروم الرموش mavala",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp",
+        "30":20
+    },{
+        "title":"جلوس وردي فواكه",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-w.webp",
+        "price":40
+    }]
+},{
+    "views":["https://storage.googleapis.com/aleen_store/makeup/makeup-product-w.webp","https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp","https://storage.googleapis.com/aleen_store/makeup/makeup-product-w.webp"],
+    "title":"سيروم الرموش mavala",
+    "price":22,
+    "desc":"وصف لمنتج سيروم الرموش mavala",
+    "stars":8,
+    "section":"makeup",
+    "more":[{
+        "title":"جلوس وردي فواكه",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-w.webp",
+        "price":40
+    },{
+        "title":"تنت جيلي",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp",
+        "price":30
+    },{
+        "title":"سيروم الرموش mavala",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp",
+        "30":20
+    },{
+        "title":"جلوس وردي فواكه",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-w.webp",
+        "price":40
+    }]
+},{
+    "views":["https://storage.googleapis.com/aleen_store/hair/heir-product-a.webp","https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp","https://storage.googleapis.com/aleen_store/makeup/makeup-product-w.webp"],
+    "title":"مشط شعر ارنوب",
+    "price":15,
+    "desc":"وصف لمنتج مشط شعر ارنوب",
+    "stars":8,
+    "section":"hair",
+    "more":[{
+        "title":"جلوس وردي فواكه",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-w.webp",
+        "price":40
+    },{
+        "title":"تنت جيلي",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp",
+        "price":30
+    },{
+        "title":"سيروم الرموش mavala",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-r.webp",
+        "30":20
+    },{
+        "title":"جلوس وردي فواكه",
+        "view":"https://storage.googleapis.com/aleen_store/makeup/makeup-product-w.webp",
+        "price":40
+    }]
+},{
+    "views":["https://storage.googleapis.com/aleen_store/hair/heir-product-q.webp","https://storage.googleapis.com/aleen_store/hair/heir-product-a.webp","https://storage.googleapis.com/aleen_store/hair/heir-product-q.webp"],
+    "title":"عطر شعر ورد",
+    "price":30,
+    "desc":"وصف لمنتج عطر شعر ورد",
+    "stars":5,
+    "section":"hair",
+    "more":[{
+        "title":"جلوس وردي فواكه",
+        "view":"https://storage.googleapis.com/aleen_store/hair/heir-product-q.webp",
+        "price":40
+    },{
+        "title":"تنت جيلي",
+        "view":"https://storage.googleapis.com/aleen_store/hair/heir-product-a.webp",
+        "price":30
+    },{
+        "title":"سيروم الرموش mavala",
+        "view":"https://storage.googleapis.com/aleen_store/hair/heir-product-w.webp",
+        "30":20
+    },{
+        "title":"جلوس وردي فواكه",
+        "view":"https://storage.googleapis.com/aleen_store/hair/heir-product-q.webp",
+        "price":40
+    }]
+},{
+    "views":["https://storage.googleapis.com/aleen_store/hair/heir-product-w.webp","https://storage.googleapis.com/aleen_store/hair/heir-product-q.webp","https://storage.googleapis.com/aleen_store/hair/heir-product-q.webp"],
+    "title":"فرشاة سيليكون للشعر",
+    "price":30,
+    "desc":"وصف لمنتج فرشاة سيليكون للشعر",
+    "stars":5,
+    "section":"hair",
+    "more":[{
+        "title":"جلوس وردي فواكه",
+        "view":"https://storage.googleapis.com/aleen_store/hair/heir-product-q.webp",
+        "price":40
+    },{
+        "title":"تنت جيلي",
+        "view":"https://storage.googleapis.com/aleen_store/hair/heir-product-a.webp",
+        "price":30
+    },{
+        "title":"سيروم الرموش mavala",
+        "view":"https://storage.googleapis.com/aleen_store/hair/heir-product-w.webp",
+        "30":20
+    },{
+        "title":"جلوس وردي فواكه",
+        "view":"https://storage.googleapis.com/aleen_store/hair/heir-product-q.webp",
+        "price":40
+    }]
+}]

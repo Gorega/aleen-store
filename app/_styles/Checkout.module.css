@@ -1,0 +1,262 @@
+.checkout{
+    margin-top:50px;
+    margin-bottom:50px;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    gap: 50px;
+    box-sizing: border-box;
+}
+
+.checkout form{
+    width: 40%;
+}
+
+.checkout form .field,.checkout form .fieldContainer{
+    margin-bottom:15px;
+}
+
+.checkout form .fieldContainer .field{
+    width: 100%;
+}
+
+.checkout form .field .error{
+    color:red;
+    padding-right:10px;
+    font-size:12px;
+    margin-top:7px;
+}
+
+.checkout form .fieldContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:15px
+}
+
+.checkout form label{
+    font-size:22px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+
+.checkout form input,.checkout form select{
+    height:40px;
+    width: 100%;
+    border:1px solid #d9d9d9;
+    font-size:14px;
+    font-weight: 300;
+    padding-right:10px;
+    box-sizing: border-box;
+}
+
+.checkout form input.error{
+    border-color: red;
+}
+
+.checkout form .radioField{
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid #d9d9d9;
+    padding:10px;
+    margin-bottom: 10px;
+}
+
+.checkout form input[type=radio]{
+    width: 15px;
+    height:15px;
+    margin-left:15px;
+}
+
+.checkout form .radioField .info{
+    display: flex;
+    gap:15px;
+}
+
+.checkout form .radioField label{
+    font-size:15px;
+    font-weight: 600;
+}
+
+.checkout form .radioField span{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.checkout form .payment{
+    margin-top:15px;
+}
+
+.checkout form .payment span{
+    font-size:14px;
+    font-weight: 300;
+    display: block;
+    margin-bottom:15px;
+}
+
+.checkout form button{
+    width: 100%;
+    height:40px;
+    padding:7px 10px;
+    border:none;
+    background-color: #1E73B0;
+    color:#fff;
+    cursor: pointer;
+    font-size:17px;
+    margin-top:25px;
+}
+
+.checkout form button.inactive{
+    pointer-events: none;
+    background-color: rgba(0,0,0,.7);
+    cursor: default;
+}
+
+.checkout form .message{
+    text-align: center;
+    margin-top:10px;
+    font-size:14px;
+    font-weight: 300;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.checkout form .message.error{
+    color:red;
+}
+
+.checkout form .message.success{
+    color:green
+}
+
+.checkout .listedItems{
+    width: 60%;
+    background-color: #F5F5F5;
+    padding:25px;
+    border-right: 1px solid #d9d9d9;
+    cursor: default;
+}
+
+.checkout .listedItems .items{
+    display: block;
+}
+
+.checkout .listedItems .items .item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:15px;
+    width: 100%;
+    margin-bottom:15px;
+}
+
+
+.checkout .listedItems .items .item .image{
+    width: 80px;
+    height: 90px;
+    position: relative;
+}
+
+.checkout .listedItems .items .item .image .img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.checkout .listedItems .items .item .image .quantity{
+    position: absolute;
+    top:-10px;
+    left:-10px;
+    background-color: #666666;
+    color:white;
+    width: 24px;
+    height:24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:11px;
+}
+
+.checkout .listedItems .items .item h4{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.checkout .listedItems .items .item span{
+    text-align: left;
+    font-size:13px;
+    font-weight: 300;
+    flex:2
+}
+
+.checkout .listedItems .discount{
+    margin-top:25px;
+    display: flex
+}
+
+.checkout .listedItems .discount input{
+    width: 80%;
+    height:40px;
+    border:1px solid #d9d9d9;
+    margin-left:10px;
+    padding-right:10px;
+    background-color: transparent;
+}
+
+.checkout .listedItems .discount button{
+    width: 20%;
+    height:40px;
+    border:none;
+    cursor: pointer;
+    padding:7px 10px;
+}
+
+.checkout .listedItems .total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.checkout .listedItems .total:last-of-type{
+    font-size: 17px;
+}
+
+.empty{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+.empty .content svg{
+    width:160px;
+    height:160px;
+}
+
+.empty .content h2{
+    font-size:27px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.empty .content p{
+    font-size:14px;
+    font-weight: 300;
+}
+
+@media(max-width:768px){
+    .checkout{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .checkout form{
+        width: 100%;
+        order:2;
+    }
+
+    .checkout .listedItems{
+        width: 100%;
+    }
+}
