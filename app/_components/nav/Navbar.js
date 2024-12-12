@@ -7,7 +7,7 @@ import CartView from "./cartModal/CartView";
 import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ContextApi } from "@/app/_util/globalContext";
+import { ContextApi } from "@/app/_util/GlobalContext";
 
 
 export default function Navbar({storeMenu}){

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import styles from "../_styles/CompareView.module.css";
 import Modal from "./Modal";
 import Image from "next/image";
-import { ContextApi } from "../_util/globalContext";
+import { ContextApi } from "../_util/GlobalContext";
 import { useRouter } from "next/navigation";
 
 export default function CompareView(){

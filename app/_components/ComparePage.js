@@ -3,7 +3,7 @@
 import { useContext, useEffect } from "react";
 import styles from "../_styles/ComparePage.module.css";
 import Image from "next/image";
-import { ContextApi } from "../_util/globalContext";
+import { ContextApi } from "../_util/GlobalContext";
 
 export default function ComparePage(){
     const {compareProducts,addToCartHandler,removeFormCartHandler,checkIsInCart} = useContext(ContextApi);

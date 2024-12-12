@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../_styles/ItemView.module.css";
 import { useRouter } from "next/navigation";
 import { useContext, useState } from "react";
-import { ContextApi } from "../_util/globalContext";
+import { ContextApi } from "../_util/GlobalContext";
 import Counter from "./Counter";
 
 

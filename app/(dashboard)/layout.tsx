@@ -5,7 +5,7 @@ import {useFetch} from "../_util/useFetch";
 import NProgressProvider from "../_util/NProgressProvider";
 import "./globals.css";
 import './progress.css';
-import GlobalContext from "../_util/globalContext";
+import GlobalContext from "../_util/GlobalContext";
 
 
 export const metadata: Metadata = {

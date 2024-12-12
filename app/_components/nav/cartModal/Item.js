@@ -2,7 +2,7 @@
 
 import { useContext, useState } from "react";
 import styles from "../../../_styles/Navbar.module.css"
-import { ContextApi } from "../../../_util/globalContext";
+import { ContextApi } from "../../../_util/GlobalContext";
 import Image from "next/image";
 import Counter from "../../Counter";
 

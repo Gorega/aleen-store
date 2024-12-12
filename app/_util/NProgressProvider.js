@@ -2,7 +2,7 @@
 
 import { useContext, useEffect } from 'react';
 import NProgress from 'nprogress';
-import { ContextApi } from './globalContext';
+import { ContextApi } from './GlobalContext';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 const NProgressProvider = () => {

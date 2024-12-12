@@ -5,7 +5,7 @@ import CompareView from "../_components/CompareView";
 
 export const ContextApi = createContext();
 
-export default function globalContext({children}){
+export default function GlobalContext({children}){
     const [modal,setModal] = useState({status:false,type:null});
     const [compareProducts,setCompareProducts] = useState([]);
     const [trackChanges,setTrackChanges] = useState(null);

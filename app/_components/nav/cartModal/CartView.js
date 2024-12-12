@@ -4,7 +4,7 @@ import styles from "../../../_styles/Navbar.module.css";
 import Modal from "../../Modal";
 import Form from "./Form";
 import {useContext, useState } from "react";
-import { ContextApi } from "@/app/_util/globalContext";
+import { ContextApi } from "@/app/_util/GlobalContext";
 import Item from "./Item";
 import { useRouter } from "next/navigation";
 

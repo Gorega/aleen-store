@@ -4,7 +4,7 @@ import Image from "next/image"
 import styles from "../_styles/Item.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ContextApi } from "@/app/_util/globalContext";
+import { ContextApi } from "@/app/_util/GlobalContext";
 import { useContext } from "react";
 import ItemView from "./ItemView";
 
