@@ -24,8 +24,7 @@ export default function ProductPage({product,sectionTitle}){
             checkIsInCart,
             addToCompareProductsHandler,
             modal,
-            setModal,
-            trackChanges} = useContext(ContextApi);
+            setModal} = useContext(ContextApi);
 
     const views = product.views;
 
@@ -49,11 +48,6 @@ export default function ProductPage({product,sectionTitle}){
         } else {
           alert("Web Share API not supported in this browser.");
     }};
-
-    useEffect(()=>{
-        checkIsFavourite(product._id)
-        checkIsInCart(product._id)
-    },[trackChanges])
 
     return <div className={`${styles.container} container`}>
     <div className={styles.navigator}>
