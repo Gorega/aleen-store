@@ -81,12 +81,12 @@ export default function CheckoutPage(){
     //     }
     // }
 
-    const itemsTotalPriceHandler = ()=>{
-        const total = products?.reduce((total,product) => {
-            return total + product.price * product.quantity;
-        },0)
-        return total;
-    }
+    // const itemsTotalPriceHandler = ()=>{
+    //     const total = products?.reduce((total,product) => {
+    //         return total + product.price * product.quantity;
+    //     },0)
+    //     return total;
+    // }
 
 
     // useLayoutEffect(()=>{
@@ -216,7 +216,7 @@ export default function CheckoutPage(){
             <div className={styles.info}>
                 <div className={styles.total}>
                     <h4>مجموع المنتجات {products.length}</h4>
-                    <span>{itemsTotalPriceHandler()} شيكل</span>
+                    <span> شيكل</span>
                 </div>
                 <div className={styles.total}>
                     <h4>الشحن</h4>
@@ -224,7 +224,7 @@ export default function CheckoutPage(){
                 </div>
                 <div className={styles.total}>
                     <h4>المجموع</h4>
-                    <span>{itemsTotalPriceHandler() + 15} شيكل</span>
+                    <span>{15} شيكل</span>
                 </div>
             </div>
         </div>
