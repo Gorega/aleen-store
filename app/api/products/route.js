@@ -18,7 +18,6 @@ export async function GET(request){
 export async function POST(request){
     await connect();
     if(request.method === "POST"){
-        const data = await request.json()
         const products = await Product.create()
         return Response.json(products);
     }

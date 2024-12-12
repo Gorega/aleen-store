@@ -42,7 +42,7 @@ export async function POST(request){
             return Response.json(orders);
         }catch(error){
             return NextResponse(
-                { error: 'An unexpected error occurred.' },
+                { error },
                 { status: 500}
             )
         }
