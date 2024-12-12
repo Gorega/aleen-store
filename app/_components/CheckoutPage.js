@@ -1,9 +1,9 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "../_styles/Checkout.module.css";
 import Image from "next/image";
-import { ContextApi } from "../_util/GlobalContext";
+// import { ContextApi } from "../_util/GlobalContext";
 
 export default function CheckoutPage(){
 
@@ -11,7 +11,7 @@ export default function CheckoutPage(){
     const [discountCode,setDiscountCode] = useState("");
     const [formDataStatus,setFormDataStatus] = useState({});
     const [formErrors,setFormErrors] = useState({});
-    const {getLocalStorageItems} = useContext(ContextApi);
+    // const {getLocalStorageItems} = useContext(ContextApi);
 
     const deliveryPlaces = [{
         id:"west_bank",
@@ -87,11 +87,11 @@ export default function CheckoutPage(){
     }
 
 
-    useEffect(()=>{
-        if (typeof window !== "undefined") {
-            getLocalStorageItems("cart", setProducts);
-        }
-    },[])
+    // useEffect(()=>{
+    //     if (typeof window !== "undefined") {
+    //         getLocalStorageItems("cart", setProducts);
+    //     }
+    // },[])
 
     if(!products || products.length === 0){
         return <div className={`${styles.empty} container`}>
