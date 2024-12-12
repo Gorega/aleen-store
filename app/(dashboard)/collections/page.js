@@ -7,7 +7,7 @@ const fetchCollectionsData = async ()=>{
     return data;
 }
 
-export default async function page(){
+export default async function Page(){
     const collections = await fetchCollectionsData();
     return <CollectionsPage collections={collections} />
 }
