@@ -6,10 +6,11 @@ import Services from "../_components/services/Services";
 import { fetchData } from "../_util/fetchData";
 
 
-const sections = await fetchData("api/sections");
-const products = await fetchData("api/products");
-
 export default async function Home() {
+
+  const sections = await fetchData("api/sections");
+  const products = await fetchData("api/products");
+  
   return (
     <>
     <Header />
