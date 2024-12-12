@@ -9,5 +9,7 @@ const fetchCollectionsData = async ()=>{
 
 export default async function Page(){
     const collections = await fetchCollectionsData();
-    return <CollectionsPage collections={collections} />
+    return (
+        <CollectionsPage collections={collections} />
+    )
 }
