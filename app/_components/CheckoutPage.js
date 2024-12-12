@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useLayoutEffect, useState } from "react";
 import styles from "../_styles/Checkout.module.css";
 import Image from "next/image";
 import { ContextApi } from "../_util/GlobalContext";
@@ -89,7 +89,7 @@ export default function CheckoutPage(){
     }
 
 
-    useEffect(()=>{
+    useLayoutEffect(()=>{
         if (typeof window !== "undefined") {
             getLocalStorageItems("cart", setProducts);
         }
