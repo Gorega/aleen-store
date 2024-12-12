@@ -1,1 +1,1 @@
-export const url = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "http://aleen-store-git-main-goregas-projects.vercel.app"
+export const url = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://aleen-store.vercel.app"
