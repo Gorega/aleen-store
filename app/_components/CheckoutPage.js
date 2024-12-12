@@ -11,7 +11,6 @@ export default function CheckoutPage(){
     const [discountCode,setDiscountCode] = useState("");
     const [formDataStatus,setFormDataStatus] = useState({});
     const [formErrors,setFormErrors] = useState({});
-
     const {getLocalStorageItems} = useContext(ContextApi);
 
     const deliveryPlaces = [{
@@ -89,7 +88,9 @@ export default function CheckoutPage(){
 
 
     useEffect(()=>{
-        getLocalStorageItems("cart",setProducts);
+        if (typeof window !== "undefined") {
+            getLocalStorageItems("cart", setProducts);
+        }
     },[])
 
     if(products.length <= 0){
