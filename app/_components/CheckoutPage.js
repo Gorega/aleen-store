@@ -4,14 +4,14 @@ import { useContext, useLayoutEffect, useState } from "react";
 import styles from "../_styles/Checkout.module.css";
 import Image from "next/image";
 import { ContextApi } from "../_util/GlobalContext";
-import {url} from "../../mongoose/url";
+// import {url} from "../../mongoose/url";
 
 export default function CheckoutPage(){
 
     const [products,setProducts] = useState([]);
     const [discountCode,setDiscountCode] = useState("");
-    const [formDataStatus,setFormDataStatus] = useState({});
-    const [formErrors,setFormErrors] = useState({});
+    const [formDataStatus] = useState({});
+    const [formErrors] = useState({});
     const {getLocalStorageItems} = useContext(ContextApi);
 
     const deliveryPlaces = [{
@@ -37,49 +37,49 @@ export default function CheckoutPage(){
         checked:false
     }]
 
-    const formDataHandler = async (e)=>{
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const country = formData.get("country");
-        const firstName = formData.get("first_name");
-        const lastName = formData.get("last_name");
-        const phone = formData.get("phone");
-        const neighbourhood = formData.get("neighbourhood");
-        const address = formData.get("address");
-        const city = formData.get("city");
-        const place = formData.get("place");
-        const payment = formData.get("payment");
+    // const formDataHandler = async (e)=>{
+    //     e.preventDefault();
+    //     const formData = new FormData(e.target);
+    //     const country = formData.get("country");
+    //     const firstName = formData.get("first_name");
+    //     const lastName = formData.get("last_name");
+    //     const phone = formData.get("phone");
+    //     const neighbourhood = formData.get("neighbourhood");
+    //     const address = formData.get("address");
+    //     const city = formData.get("city");
+    //     const place = formData.get("place");
+    //     const payment = formData.get("payment");
 
-        setFormDataStatus({status:"pending"})
-        setFormErrors({})
-        const response = await fetch(`${url}/api/orders`,{
-            method:"POST",
-            headers: { "Content-Type": "application/json" },
-            body:JSON.stringify(
-                {country,
-                firstName,
-                lastName,
-                phone,
-                neighbourhood,
-                address,
-                city,
-                place,
-                paymentMethod:payment,
-                products:products,
-                discountCode}
-            )
-        })
-        if(!response.ok){
-            const data = await response.json();
-            if(data.error){
-                setFormErrors(data.details);
-            }
-            setFormDataStatus({status:"error",message:"الرجاء التأكد من تعبئة الحقول المطلوبة بشكل سليم !"})
-        }else{
-            setFormErrors({})
-            setFormDataStatus({status:"success",message:"تم ارسال الطلب بنجاح, شكرا لثقتك بمتجرنا"})
-        }
-    }
+    //     setFormDataStatus({status:"pending"})
+    //     setFormErrors({})
+    //     const response = await fetch(`${url}/api/orders`,{
+    //         method:"POST",
+    //         headers: { "Content-Type": "application/json" },
+    //         body:JSON.stringify(
+    //             {country,
+    //             firstName,
+    //             lastName,
+    //             phone,
+    //             neighbourhood,
+    //             address,
+    //             city,
+    //             place,
+    //             paymentMethod:payment,
+    //             products:products,
+    //             discountCode}
+    //         )
+    //     })
+    //     if(!response.ok){
+    //         const data = await response.json();
+    //         if(data.error){
+    //             setFormErrors(data.details);
+    //         }
+    //         setFormDataStatus({status:"error",message:"الرجاء التأكد من تعبئة الحقول المطلوبة بشكل سليم !"})
+    //     }else{
+    //         setFormErrors({})
+    //         setFormDataStatus({status:"success",message:"تم ارسال الطلب بنجاح, شكرا لثقتك بمتجرنا"})
+    //     }
+    // }
 
     const itemsTotalPriceHandler = ()=>{
         const total = products?.reduce((total,product) => {
