@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function CheckoutPage(){
 
-    const [products,setProducts] = useState([]);
+    // const [products,setProducts] = useState([]);
     const [discountCode,setDiscountCode] = useState("");
     const [formDataStatus,setFormDataStatus] = useState({});
     const [formErrors,setFormErrors] = useState({});
@@ -192,7 +192,7 @@ export default function CheckoutPage(){
         </form>
         <div className={styles.listedItems}>
             <div className={styles.items}>
-                {products?.map((product,index)=>{
+                {[]?.map((product,index)=>{
                     return <div key={index} className={styles.item}>
                         <div className={styles.image}>
                             <Image className={styles.img} src={product.image} width={100} height={100} alt={product.title} />
