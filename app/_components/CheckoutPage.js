@@ -107,7 +107,7 @@ export default function CheckoutPage(){
 
 
     return <div className={`${styles.checkout} container`}>
-        <form onSubmit={formDataHandler}>
+        <form>
             <div className={styles.field}>
                 <label>معلومات الاتصالات</label>
                 <input className={formErrors?.phone ? styles.error : ""} type="text" name="phone" placeholder="رقم الهاتف" />
