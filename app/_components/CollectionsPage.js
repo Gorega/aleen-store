@@ -12,7 +12,7 @@ export default function CollectionsPage({collections}){
             <span><Link href={"/"}>الرئيسية</Link> / المتجر</span>
         </div>
         <div className={styles.collections}>
-            {collections && collections.map((collection,index)=>{
+            {collections && collections?.map((collection,index)=>{
                 return <div key={index} className={styles.collection}>
                     <Image className={styles.view} src={collection.logo} alt={collection.title} width={300} height={300} />
                     <div className={styles.label}>
