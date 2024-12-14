@@ -272,13 +272,12 @@
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    width: 60%;
-    height:max-content;
-    min-height: 300px;
     background-color: #fff;
     color:black;
     animation-name: modalAnimate;
     animation-duration: 1s;
+    width: 30%;
+    height:max-content;
 }   
 
 .policy .close,.question .close{
@@ -287,11 +286,6 @@
     top:15px;
     font-size: 20px;
     cursor: pointer;
-}
-
-.question{
-    width: 30%;
-    height: 80%;
 }
 
 .question .product{
@@ -436,6 +430,11 @@
         display: none;
     }
 
+    .policy,.question{
+        width: 80%;
+    }   
+    
+
 }
 
 @media  (min-width: 769px) and (max-width:1400px) {
@@ -484,5 +483,9 @@
     .container .info::after{
         display: none;
     }
+
+    .policy,.question{
+        width: 50%;
+    }  
 
 }

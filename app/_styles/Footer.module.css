@@ -46,6 +46,7 @@
     color:#868686;
     font-size:14px;
     font-weight: 400;
+    text-wrap: nowrap;
 }
 
 .footer .sections .social .icons ul{
@@ -109,4 +110,11 @@
 .outer span{
     text-align: center;
     font-size:14px;
+}
+
+
+@media (max-width:768px) {
+    .footer .sections{
+        flex-direction: column;
+    }
 }

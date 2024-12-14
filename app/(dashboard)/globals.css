@@ -27,9 +27,9 @@ body a{
 
 
 /* small devices */
-@media  (min-width: 320px) and (max-width:480px){
+@media screen and (max-width:480px){
     .container {
-        width: 90%; /* Full width */
+        width: 100%; /* Full width */
     }
 }
 

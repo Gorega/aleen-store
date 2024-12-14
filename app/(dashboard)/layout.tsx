@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   description: "Aleen store",
 };
 
+export const viewport = {
+  initialScale: .6,
+  width: 'device-width',
+}
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -26,7 +31,7 @@ export default async function RootLayout({
     <html lang="ar" dir="rtl">
       <body>
         <GlobalContext>
-          <Suspense fallback={<>...loading</>}>
+          <Suspense>
            <NProgressProvider />
           </Suspense>
           <Navbar storeMenu={storeMenu} />
