@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
         pathname:"/aleen_store/**"
       }
     ]
+  },
+  env:{
+    API_BASE_URL: "https://aleen-store.vercel.app/", // Example environment variable
   }
 };
 
