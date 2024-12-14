@@ -6,6 +6,7 @@ import NProgressProvider from "../_util/NProgressProvider";
 import "./globals.css";
 import './progress.css';
 import GlobalContext from "../_util/GlobalContext";
+import { Suspense } from "react";
 
 
 export const metadata: Metadata = {
@@ -25,7 +26,9 @@ export default async function RootLayout({
     <html lang="ar" dir="rtl">
       <body>
         <GlobalContext>
-          <NProgressProvider />
+          <Suspense fallback={<>...loading</>}>
+           <NProgressProvider />
+          </Suspense>
           <Navbar storeMenu={storeMenu} />
           {children}
           <Footer storeMenu={storeMenu} />
