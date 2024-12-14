@@ -68,8 +68,8 @@ export default function GlobalContext({children}){
 
     const checkIsFavourite = (id)=>{
         const items = JSON.parse(localStorage.getItem("favourite") || "[]");
-        const exist = items.some((item)=> item.id === id);
-        return exist;
+            const exist = items.some((item)=> item.id === id);
+            return exist;
     }
 
     const checkIsInCart = (id)=>{

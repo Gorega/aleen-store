@@ -7,7 +7,7 @@ import { ContextApi } from "../_util/GlobalContext";
 
 export default function ComparePage(){
     const {compareProducts,addToCartHandler,removeFormCartHandler,checkIsInCart} = useContext(ContextApi);
-
+    
     return <div className={`${styles.compare} container`}>
         {compareProducts.length > 0
         ?
