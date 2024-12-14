@@ -1,1 +1,1 @@
-export const url = process.env.NODE_ENV === "development" ? "http://localhost:3000/" : process.env.NEXT_AUTH_URL
+export const url = process.env.NODE_ENV === "development" ? "http://localhost:3000/" : "https://aleen-store.vercel.app/"
