@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../_components/nav/Navbar";
 import Footer from "../_components/Footer";
-// import {fetchData} from "../_util/fetchData";
+import {fetchData} from "../_util/fetchData";
 // import NProgressProvider from "../_util/NProgressProvider";
 import "./globals.css";
 import './progress.css';
@@ -20,15 +20,15 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  // const storeMenu = await fetchData("api/sections");
+  const storeMenu = await fetchData("api/sections");
 
   return (
     <html lang="ar" dir="rtl">
       <body>
         <GlobalContext>
-          <Navbar storeMenu={[]} />
+          <Navbar storeMenu={storeMenu} />
           {children}
-          <Footer storeMenu={[]} />
+          <Footer storeMenu={storeMenu} />
         </GlobalContext>
       </body>
     </html>
