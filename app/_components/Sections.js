@@ -1,6 +1,6 @@
 "use client"
 
-import { useRouter } from "next/navigation";
+import { useRouter } from "next-nprogress-bar";
 import styles from "../_styles/Sections.module.css";
 import Image from "next/image";
 
@@ -8,7 +8,7 @@ export default function Sections({storeMenu}){
 
     const router = useRouter();
     
-    return <main className={`${styles.main} container`}>
+    return <main className={styles.main}>
         <h2>الأقسام</h2>
         <div className={styles.sections}>
             {storeMenu?.map((li,index)=>{

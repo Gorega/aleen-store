@@ -16,7 +16,7 @@ export default async function page({params}){
 
     return <>
         <CollectionPage
-            products={products}
+            products={products.data}
             sections={sections}
             section={singleSection}
         />

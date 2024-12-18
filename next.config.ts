@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
         protocol:"https",
         hostname:"storage.googleapis.com",
         port:"",
-        pathname:"/aleen_store/**"
+        pathname:"/aleen-store/**"
       }
     ]
   },

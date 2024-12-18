@@ -4,11 +4,12 @@ import styles from "../../_styles/ProductPage.module.css";
 import Image from "next/image";
 import Policy from "./Policy";
 import Form from "./Form";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ContextApi } from "@/app/_util/GlobalContext";
 import Counter from "../Counter";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next-nprogress-bar";
+import Item from "../Item";
 
 export default function ProductPage({product,sectionTitle}){
 
@@ -19,6 +20,13 @@ export default function ProductPage({product,sectionTitle}){
     const [currentCounterValue,setCurrentCounterValue] = useState(1);
     const [isInCart,setIsInCart] = useState(false);
     const [isInFavourite,setIsInFavourite] = useState(false);
+    const [currentPage,setCurrentPage] = useState(1);
+    const [totalPages,setTotalPages] = useState(null);
+    const [otherProducts,setOtherProducts] = useState([]);
+    const [lastSeenProducts,setLastSeenProducts] = useState([]);
+    const [loading,setLoading] = useState(true);
+    const [backgroundPosition, setBackgroundPosition] = useState("0% 0%");
+    const zoomedAreaRef = useRef();
     const {addToCartHandler,
             addToFavouriteHandler,
             removeFormCartHandler,
@@ -52,12 +60,39 @@ export default function ProductPage({product,sectionTitle}){
           alert("Web Share API not supported in this browser.");
     }};
 
+    const zoomViewHandler =(e)=>{
+        const { left, top, width, height } = e.target.getBoundingClientRect();
+        const x = ((e.clientX - left) / width) * 100;
+        const y = ((e.clientY - top) / height) * 100;
+        setBackgroundPosition(`${x}% ${y}%`);
+        zoomedAreaRef.current.style.display = "block"
+    }
+
+    const leaveZoomViewHandler = ()=>{
+        setBackgroundPosition("0% 0%");
+        zoomedAreaRef.current.style.display = "none"
+    }
+
+    const fetchProducts = async (url,setData)=>{
+        setLoading(true)
+        const response = await fetch(url)
+        const data = await response.json();
+        setData(data.data)
+        setTotalPages(data.pagination.totalPages)
+        setLoading(false)
+    }
+
     useEffect(()=>{
         setIsInCart(checkIsInCart(product._id));
         setIsInFavourite(checkIsFavourite(product._id))
     },[trackChanges])
 
-    return <div className={`${styles.container} container`}>
+    useEffect(()=>{
+        fetchProducts(`/api/products/${product.section}?page=${currentPage}`,setOtherProducts);
+        fetchProducts(`/api/products/${product.section}?page=${currentPage}&sort_by=created_At`,setLastSeenProducts);
+    },[currentPage])
+
+    return <div className={styles.container}>
     <div className={styles.navigator}>
         <Link href="/">الرئيسية</Link> / <Link href={`/collections/${product.section}`}>{sectionTitle}</Link> / {product.title}
     </div>
@@ -70,8 +105,9 @@ export default function ProductPage({product,sectionTitle}){
                         </div>
                 })}
         </div>
-        <div className={styles.view}>
-                <Image className={styles.img} src={views[currentView]} width={400} height={400} alt={views[currentView].title} />
+        <div className={styles.view} >
+                <Image className={styles.img} src={views[currentView]} width={400} height={400} alt={views[currentView].title} onMouseMove={zoomViewHandler} onMouseLeave={leaveZoomViewHandler} />
+                <div className={styles.zoomedView} ref={zoomedAreaRef} style={{backgroundImage:`url(${views[currentView]})`,backgroundPosition:backgroundPosition}}> </div>
         </div>
         <div className={styles.content}>
             <div className={styles.head}>
@@ -155,8 +191,37 @@ export default function ProductPage({product,sectionTitle}){
             <li className={currentList === 0 ? styles.active : ""} onClick={()=> setCurrentList(0)}>منتجات قد تعجبك ايضا</li>
             <li className={currentList === 1 ? styles.active : ""} onClick={()=> setCurrentList(1)}>شاهدت مؤخراً</li>
         </ul>
-        <div className={styles.list}>
-            
+        <div className={styles.listContainer}>
+            {loading
+            ?
+            <div className={styles.list}>
+                {Array.from({length:4})?.map((_,index)=>{
+                    return <div key={index} className={styles.itemSpinner}>
+                        <div className={styles.image}>
+                        </div>
+                        <div className={styles.info}>
+                            <h4></h4>
+                            <span></span>
+                        </div>
+                    </div>
+                })}
+            </div>
+            :
+            <>
+            <div className={styles.list}>
+                {currentList === 0 && otherProducts?.map((product,index)=>{
+                    return <Item key={index} content={product} />
+                })}
+                {currentList === 1 && lastSeenProducts?.map((product,index)=>{
+                    return <Item key={index} content={product} />
+                })}
+            </div>
+            <ul>
+                {Array.from({length:totalPages})?.map((_,index)=>{
+                    return <li key={index} className={index+1 === currentPage ? styles.active : ""} onClick={()=> setCurrentPage(index+1)}></li>
+                })}
+            </ul>
+            </>}
         </div>
     </div>
 </div>

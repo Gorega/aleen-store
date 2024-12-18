@@ -5,9 +5,11 @@
     transform: translate(-50%,-50%);
     display: flex;
     width: 60%;
-    height:500px;
+    height:max-content;
     background-color: #fff;
     cursor: auto;
+    overflow: auto;
+    padding:15px;
 }
 
 .item .view{

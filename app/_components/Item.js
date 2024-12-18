@@ -3,7 +3,7 @@
 import Image from "next/image"
 import styles from "../_styles/Item.module.css";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next-nprogress-bar";
 import { ContextApi } from "@/app/_util/GlobalContext";
 import { useContext, useEffect, useState } from "react";
 import ItemView from "./ItemView";
@@ -21,6 +21,11 @@ export default function Item({content,tableShape}){
             checkIsInCart,
             addToCompareProductsHandler,
             trackChanges} = useContext(ContextApi);
+
+    const closeModal = ()=>{
+        setModal({status:false,type:null})
+        document.body.style.overflow = "auto"
+    }
 
 
     useEffect(()=>{
@@ -72,7 +77,7 @@ export default function Item({content,tableShape}){
             </div>
             {(modal.type === "ITEM_VIEW")
             &&
-            <ItemView product={modal.payload} closeModal={()=> setModal({status:false,type:null})} />}
+            <ItemView product={modal.payload} closeModal={closeModal} />}
         </div>
         
 }

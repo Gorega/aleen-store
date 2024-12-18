@@ -1,5 +1,7 @@
 .container{
     margin-top:50px;
+    padding:0 15px;
+    caret-color: transparent;
 }
 
 .container .navigator{
@@ -10,9 +12,10 @@
 
 .container .product{
     display: flex;
-    justify-content: flex-start;
-    width: 70%;
+    justify-content: center;
     margin: 50px auto;
+    position: relative;
+    padding-bottom: 50px;
 }
 
 .container .product .images{
@@ -44,18 +47,37 @@
 
 .container .product .view{
     margin-left:25px;
-    width: 600px;
-    height:600px;
+    width: 550px;
+    height:550px;
+    position: relative;
 }
 
 .container .product .view .img{
     width: 100%;
     height:100%;
     object-fit: cover;
+    cursor: crosshair;
+}
+
+.container .product .zoomedView{
+    display: none;
+    position: absolute;
+    top:0;
+    right:570px;
+    width: 360px;
+    height:360px;
+    background-color: white;
+    border:1px solid #d9d9d9;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 1000px 1000px; /* Zoomed size of the image */
+    z-index: 10;
+    animation-name: animate;
+    animation-duration: 1s;
 }
 
 .container .product .content{
-    flex:1;
+    width: 25%;
 }
 
 .container .product .content .head{
@@ -64,7 +86,7 @@
     padding:0 0 25px 0;
 }
 
-.container .product .content .head::after,.container .info::after{
+.container .product .content .head::after,.container .product::after{
     content:"";
     position: absolute;
     bottom:0;
@@ -118,22 +140,6 @@
     cursor: pointer;
 }
 
-.container .product .content .more .quantity button{
-    background-color: black;
-    color:white;
-    border: none;
-    padding:7px 15px;
-    text-align: center;
-    font-size:17px;
-    font-weight: 600;
-    margin-right:15px;
-    height:50px;
-    width: 80%;
-    cursor: pointer;
-    transition: .2s ease-in-out;
-    text-wrap: nowrap;
-}
-
 .container .product .content .more .quantity button:hover,.container .product .content .more .buy button:hover{
     background-color:#3FC1AE;
 }
@@ -142,19 +148,24 @@
     margin-top:15px;
 }
 
-.container .product .content .more .buy button{
+.container .product .content .more .quantity button,.container .product .content .more .buy button{
     background-color: black;
     color:white;
     border: none;
     padding:7px 15px;
     text-align: center;
-    font-size:17px;
+    font-size:14px;
     font-weight: 600;
     width: 100%;
     height:50px;
     cursor: pointer;
     transition: .2s ease-in-out;
     text-wrap: nowrap;
+}
+
+.container .product .content .more .quantity button{
+    width: 80%;
+    margin-right:15px;
 }
 
 .container .product .content .query ul,.container .product .content .share ul,.container .product .content .share{
@@ -174,6 +185,7 @@
     justify-content: center;
     align-items: center;
     gap:15px;
+    font-size:14px;
 }
 
 .container .product .content .query ul li.active{
@@ -185,8 +197,8 @@
 }
 
 .container .product .content .query ul li span{
-    width: 50px;
-    height:50px;
+    width: 40px;
+    height:40px;
     border-radius: 50%;
     border:1px solid #d9d9d9;
     display: flex;
@@ -195,8 +207,8 @@
 }
 
 .container .product .content .query span svg{
-    width: 27px;
-    height:27px;
+    width: 24px;
+    height:24px;
 }
 
 .container .info{
@@ -207,6 +219,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom:15px;
 }
 
 .container .info .tags ul,.container .extra ul{
@@ -215,6 +228,7 @@
     justify-content: flex-start;
     align-items: center;
     gap:36px;
+    margin-bottom: 40px;
 }
 
 .container .info .tags ul li,.container .extra ul li{
@@ -259,11 +273,73 @@
     border-bottom: 1px solid #d9d9d9;
 }
 
+.container .extra .listContainer{
+    width: 90%;
+    padding:0 25px;
+}
+
+
 .container .extra .list{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:25px;
+}
+
+
+.container .extra .listContainer ul{
+    list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:36px;
+    gap:15px;
+    text-align: center;
+    margin-top:25px;
+}
+
+.container .extra .listContainer ul li{
+    cursor: pointer;
+    width: 26px;
+    height:2.5px;
+    background-color: #d9d9d9;
+    caret-color: transparent;
+}
+
+.container .extra .listContainer ul li:hover,.container .extra .listContainer ul li.active{
+    background-color: black;
+}
+
+.container .extra .listContainer .list .itemSpinner{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    animation-name: animate;
+    animation-duration: 1s;
+    cursor: pointer;
+}
+
+.container .extra .listContainer .list .itemSpinner .image{
+    width: 100%;
+    height: 500px;
+    background-color: #d9d9d9;
+}
+
+.container .extra .listContainer .list .itemSpinner .info{
+    height: auto;
+}
+
+.container .extra .listContainer .list .itemSpinner h4{
+    width: 220px;
+    height:15px;
+    background-color: #d9d9d9;
+    margin:0;
+}
+
+.container .extra .listContainer .list .itemSpinner span{
+    display: block;
+    width: 140px;
+    height:10px;
+    background-color: #d9d9d9;
+    margin-top:15px;
 }
 
 .policy,.question{
@@ -383,7 +459,16 @@
     }
 }
 
-@media(max-width:768px){
+@keyframes animate {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@media (min-width: 320px) and (max-width:768px){
     .container .product{
         display: flex;
         flex-direction: column;
@@ -396,11 +481,7 @@
         justify-content: center;
         align-items: center;
         margin-top:25px;
-        width: 100%;
-    }
-
-    .container .product .images .view{
-        height:140px;
+        flex-wrap: wrap;
     }
 
     .container .product .view{
@@ -409,21 +490,29 @@
         height: 350px;
     }
 
-    .container .product .content{
-        margin-top:40px;
-        order:3;
+    .container .product .zoomedView{
         position: relative;
+        top:0;
+        right:0;
+        width: 360px;
+        height:360px;
+    }
+
+    .container .product .content{
+        order:3;
         width: 100%;
     }
 
-    .container .product .content::after{
-        content:"";
-        position: absolute;
-        bottom:0;
-        left:0;
-        width: 100%;
-        height:1px solid #d9d9d9;
-        border-bottom: 1px solid #d9d9d9;;
+    .container .product .content .head h2{
+        font-size:19px;
+    }
+    
+    .container .product .content .head span{
+        font-size:15px;
+    }
+    
+    .container .product .content .more p{
+        font-size: 14px;
     }
 
     .container .info::after{
@@ -432,12 +521,34 @@
 
     .policy,.question{
         width: 80%;
-    }   
-    
+    }
 
+    .container .info .tags ul li,.container .extra ul li{
+        font-size:14px;
+    }
+
+    .container .extra ul{
+        padding:0;
+    }
+
+    .container .extra .list{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .container .extra .listContainer .list .itemSpinner .image{
+        height:200px;
+    }
+
+    .container .product .content .query ul,.container .product .content .share ul,.container .product .content .share{
+        gap:30px
+    }
+    
+    .container .product .content .query ul li,.container .product .content .share ul li{
+        font-size:12px;
+    }
 }
 
-@media  (min-width: 769px) and (max-width:1400px) {
+@media  (min-width: 766px) and (max-width:992px){
     .container .product{
         width: 100%;
         display: grid;
@@ -451,12 +562,11 @@
         justify-content: flex-start;
         align-items: center;
         margin-top:15px;
+        flex-wrap: wrap;
     }
 
     .container .product .images .view{
         grid-area: views;
-        width:120px;
-        height:120px;
     }
 
     .container .product::after{
@@ -476,8 +586,17 @@
         height:500px;
     }
 
+    .container .product .zoomedView{
+        position: relative;
+        top:0;
+        right:0;
+        width: 360px;
+        height:360px;
+    }
+
     .container .product .content{
         grid-area: contentElements;
+        width: 100%;
     }
 
     .container .info::after{
@@ -487,5 +606,39 @@
     .policy,.question{
         width: 50%;
     }  
+    .container .extra .list{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
 
+    .container .extra .listContainer .list .itemSpinner .image{
+        height:270px;
+    }
+
+    .container .product .content .query ul,.container .product .content .share ul,.container .product .content .share{
+        gap:30px
+    }
+    
+    .container .product .content .query ul li,.container .product .content .share ul li{
+        font-size:12px;
+    }
+
+}
+
+@media  (min-width: 990px) and (max-width:1200px){
+    .item .image{
+        height:310px;
+    }
+
+    .container .product .zoomedView{
+        position: relative;
+        top:0;
+        right:0;
+        width: 360px;
+        height:360px;
+    }
+
+    .container .extra .listContainer .list .itemSpinner .image{
+        height:310px;
+    }
 }

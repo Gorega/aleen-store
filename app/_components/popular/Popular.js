@@ -3,10 +3,10 @@
 import styles from "../../_styles/Popular.module.css";
 import List from '../List';
 
-export default async function Popular({products}){
+export default function Popular({products}){
 
-    return <div className={`${styles.popular} container`}>
-        <h2>الأكثر شيوعا <span>هذا الاسبوع</span></h2>
-        <List products={products} />
+    return <div className={styles.popular}>
+        <h2>الأكثر شيوعا</h2>
+        <List products={products.slice(0,9)} link={"/collections"} />
     </div>
 }

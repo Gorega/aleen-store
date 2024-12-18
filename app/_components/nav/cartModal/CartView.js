@@ -6,7 +6,7 @@ import Form from "./Form";
 import {useContext, useState } from "react";
 import { ContextApi } from "@/app/_util/GlobalContext";
 import Item from "./Item";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next-nprogress-bar";
 
 export default function CartView({closeModal,items}){
     const router = useRouter();

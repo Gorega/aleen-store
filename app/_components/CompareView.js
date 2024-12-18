@@ -3,7 +3,7 @@ import styles from "../_styles/CompareView.module.css";
 import Modal from "./Modal";
 import Image from "next/image";
 import { ContextApi } from "../_util/GlobalContext";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next-nprogress-bar";
 
 export default function CompareView(){
     const router = useRouter();
@@ -13,17 +13,18 @@ export default function CompareView(){
         const newList = compareProducts.filter((product)=> product._id !== id)
         setCompareProducts(newList)
         if(newList.length <= 0){
-            setModal({status:false,type:null})
+            closeModal();
         }
     }
 
     const removeAllProductsHandler = ()=>{
         setCompareProducts([]);
-        setModal({status:false,type:null})
+        closeModal();
     }
 
     const closeModal = ()=>{
         setModal({status:false,type:null})
+        document.body.style.overflow = "auto"
     }
 
     return <Modal closeModal={closeModal} opacity={".1"}>

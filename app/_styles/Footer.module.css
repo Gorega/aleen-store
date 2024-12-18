@@ -22,11 +22,14 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding:0 25px;
 }
 
 .footer .sections .section h2{
     font-size:24px;
-    font-weight: 700;
+    text-wrap: nowrap;
+    font-family:'Times New Roman', Times, serif;
+    cursor: pointer;
 }
 
 .footer .sections .section .social h2{

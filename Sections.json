@@ -1,115 +1,75 @@
 [{
     "title":"العناية بالبشرة",
-    "logo":"https://storage.googleapis.com/aleen_store/sections/face-care-header-background.jpg",
+    "logo":"https://storage.googleapis.com/aleen-store/sections/%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%B9%D9%86%D8%A7%D9%8A%D8%A9%20%D8%A8%D8%A7%D9%84%D8%A8%D8%B4%D8%B1%D8%A9.jpg",
     "section":"skin",
     "order":1,
     "sub":[{
-        "title":"بكجات العناية بالبشرة",
-        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/eyelashes.avif"
+        "title":"بكجات العناية بالبشرة"
     },{
-        "title":"تونر للوجه",
-        "logo":""
+        "title":"تونر للوجه"
     },{
-        "title":"كريم ايدين",
-        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/cream.avif"
+        "title":"كريم ايدين"
     },{
-        "title":"كريم وغسول للوجه والجسم",
-        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/sheet-mask.avif"
+        "title":"كريم وغسول للوجه والجسم"
     },{
-        "title":"ماسكات",
-        "logo":""
+        "title":"ماسكات"
     },{
-        "title":"مرطبات شفايف",
-        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/lipstick.avif"
+        "title":"مرطبات شفايف"
     },{
-        "title":"مقشر للجسم",
-        "logo":""
+        "title":"مقشر للجسم"
     },{
-        "title":"مقوي اظافر",
-        "logo":""
-    }],
-    "views":[{
-        "title":"مجموعة Shower",
-        "logo":"",
-        "price":30
-    },{
-        "title":"ماء الورد",
-        "logo":"",
-        "price":20
-    },{
-        "title":"مرطب شفايف",
-        "logo":"",
-        "price":40
+        "title":"مقوي اظافر"
     }]
 },{
     "title":"مكياج",
-    "logo":"https://storage.googleapis.com/aleen_store/sections/make_up.webp",
+    "logo":"https://storage.googleapis.com/aleen-store/sections/%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D9%85%D9%83%D9%8A%D8%A7%D8%AC.webp",
     "section":"makeup",
     "order":2,
     "sub":[{
-        "title":"مسكارة وايلاينر",
-        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/eyeliner.avif"
+        "title":"مسكارة وايلاينر"
     },{
-        "title":"مورد خدود",
-        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/blush-brush.avif"
+        "title":"مورد خدود"
     },{
-        "title":"فراشي مكياج",
-        "logo":""
+        "title":"فراشي مكياج"
     },{
-        "title":"كريم اساس وكونسيلر",
-        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/concealer.avif"
+        "title":"كريم اساس وكونسيلر"
     },{
-        "title":"جلوس",
-        "logo":"https://storage.googleapis.com/aleen_store/sections/sub/wavy-hair.avif"
-    }],
-    "views":[]
-},{
-    "title":"كريمات",
-    "logo":"https://storage.googleapis.com/aleen_store/sections/craems.webp",
-    "order":8,
-    "sub":[],
-    "section":"creams",
-    "views":[]
+        "title":"جلوس"
+    }]
 },{
     "title":"كاسات",
-    "logo":"https://storage.googleapis.com/aleen_store/sections/glasses.webp",
+    "logo":"https://storage.googleapis.com/aleen-store/sections/%D9%82%D8%B3%D8%A7%D9%85%20%D8%A7%D9%84%D9%83%D8%A7%D8%B3%D8%A7%D8%AA.webp",
     "order":9,
     "sub":[],
-    "section":"cups",
-    "views":[]
+    "section":"cups"
 },{
     "title":"اكسسوارات",
-    "logo":"https://storage.googleapis.com/aleen_store/sections/accessories.webp",
+    "logo":"https://storage.googleapis.com/aleen-store/sections/%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%A7%D9%83%D8%B3%D8%B3%D9%88%D8%A7%D8%B1%D8%A7%D8%AA.webp",
     "order":7,
     "sub":[],
-    "section":"accessories",
-    "views":[]
+    "section":"accessories"
 },{
     "title":"العناية بالجسم",
-    "logo":"https://storage.googleapis.com/aleen_store/sections/bodycare.webp",
+    "logo":"https://storage.googleapis.com/aleen-store/sections/%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%B9%D9%86%D8%A7%D9%8A%D8%A9%20%D8%A8%D8%A7%D9%84%D8%AC%D8%B3%D9%85.webp",
     "order":4,
     "sub":[],
-    "section":"body",
-    "views":[]
+    "section":"body"
 },{
     "title":"العناية بالشعر",
-    "logo":"https://storage.googleapis.com/aleen_store/sections/haircare.webp",
+    "logo":"https://storage.googleapis.com/aleen-store/sections/%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%B9%D9%86%D8%A7%D9%8A%D8%A9%20%D8%A8%D8%A7%D9%84%D8%B4%D8%B9%D8%B1.webp",
     "order":3,
     "sub":[],
-    "section":"hair",
-    "views":[]
+    "section":"hair"
 },{
     "title":"ماسكات",
-    "logo":"https://storage.googleapis.com/aleen_store/sections/masks.webp",
+    "logo":"https://storage.googleapis.com/aleen-store/sections/%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D9%85%D8%A7%D8%B3%D9%83%D8%A7%D8%AA.webp",
     "order":6,
     "sub":[],
-    "section":"masks",
-    "views":[]
+    "section":"masks"
 },{
     "title":"عطور",
-    "logo":"https://storage.googleapis.com/aleen_store/sections/perfumes.webp",
+    "logo":"https://storage.googleapis.com/aleen-store/sections/%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%B9%D8%B7%D9%88%D8%B1.webp",
     "order":5,
     "sub":[],
-    "section":"perfumes",
-    "views":[]
+    "section":"perfumes"
 }]

@@ -1,0 +1,56 @@
+[{
+    "title":"ماسكارا وايلاينر",
+    "logo":"https://storage.googleapis.com/aleen-store/tags/eyeliner.avif",
+    "section":"skin",
+    "order":1
+},{
+    "title":"مرطب شفاه",
+    "logo":"https://storage.googleapis.com/aleen-store/tags/lipstick.avif",
+    "section":"skin",
+    "order":2
+},{
+    "title":"عطور",
+    "logo":"https://storage.googleapis.com/aleen-store/tags/spray-bottle.avif",
+    "order":3,
+    "section":"perfumes"
+},{
+    "title":"مكياج",
+    "logo":"https://storage.googleapis.com/aleen-store/tags/eyeshadow.webp",
+    "order":4,
+    "section":"makeup"
+},{
+    "title":"الرموش والحواجب",
+    "logo":"https://storage.googleapis.com/aleen-store/tags/eyelashes.avif",
+    "order":5,
+    "section":"body"
+},{
+    "title":"العناية بالشعر",
+    "logo":"https://storage.googleapis.com/aleen-store/tags/wavy-hair.avif",
+    "order":6,
+    "section":"hair"
+},{
+    "title":"كريم وغسول الوجه",
+    "logo":"https://storage.googleapis.com/aleen-store/tags/cream.avif",
+    "order":7,
+    "section":"skin"
+},{
+    "title":"ماسك الوجه",
+    "logo":"https://storage.googleapis.com/aleen-store/tags/sheet-mask.avif",
+    "order":8,
+    "section":"masks"
+},{
+    "title":"مورد خدود",
+    "logo":"https://storage.googleapis.com/aleen-store/tags/blush-brush.avif",
+    "order":9,
+    "section":"skin"
+},{
+    "title":"فراشي مكياج",
+    "logo":"https://storage.googleapis.com/aleen-store/tags/makeup.webp",
+    "order":10,
+    "section":"makeup"
+},{
+    "title":"كريم اساس وكونسيلر",
+    "logo":"https://storage.googleapis.com/aleen-store/tags/concealer.avif",
+    "order":11,
+    "section":"masks"
+}]

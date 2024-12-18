@@ -218,6 +218,14 @@
     .item .image{
         height:200px;
     }
+    .item.tableView{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .item.tableView .text{
+        margin:0;
+    }
 }
 
 @media  (min-width: 766px) and (max-width:992px){
@@ -318,11 +326,9 @@
 @keyframes animate {
     from{
         opacity: 0;
-        transform: translateY(20px);
     }
     to{
         opacity: 1;
-        transform: translateY(-20px);
     }
 }
 

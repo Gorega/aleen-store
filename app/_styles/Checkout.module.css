@@ -1,4 +1,5 @@
 .checkout{
+    margin:0 auto;
     margin-top:50px;
     margin-bottom:50px;
     display: flex;
@@ -6,10 +7,23 @@
     width: 70%;
     gap: 50px;
     box-sizing: border-box;
+    height: 500px;
+    overflow: auto;
+}
+
+.checkout::-webkit-scrollbar{
+    background-color: rgba(0,0,0,.1);
+    width: 5px;
+}
+
+.checkout::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
 }
 
 .checkout form{
     width: 40%;
+    height: 100%;
 }
 
 .checkout form .field,.checkout form .fieldContainer{
@@ -133,10 +147,27 @@
     padding:25px;
     border-right: 1px solid #d9d9d9;
     cursor: default;
+    display: grid;
+    height: 90%;
+    grid-template-rows: 2fr 1fr;
+    position: sticky;
+    top:0;
 }
 
 .checkout .listedItems .items{
+    padding:15px;
     display: block;
+    overflow: auto;
+}
+
+.checkout .listedItems .items::-webkit-scrollbar{
+    background-color: rgba(0,0,0,.1);
+    width: 5px;
+}
+
+.checkout .listedItems .items::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
 }
 
 .checkout .listedItems .items .item{
@@ -145,7 +176,7 @@
     align-items: center;
     gap:15px;
     width: 100%;
-    margin-bottom:15px;
+    margin-bottom:25px;
 }
 
 
@@ -189,7 +220,6 @@
 }
 
 .checkout .listedItems .discount{
-    margin-top:25px;
     display: flex
 }
 
@@ -219,6 +249,10 @@
 
 .checkout .listedItems .total:last-of-type{
     font-size: 17px;
+}
+
+.checkout .listedItems .total span:last-of-type{
+    font-weight: 600;
 }
 
 .empty{
@@ -252,11 +286,14 @@
     }
 
     .checkout form{
-        width: 100%;
+        width: 90%;
         order:2;
+        margin:0 auto;
     }
 
     .checkout .listedItems{
-        width: 100%;
+        position: relative;
+        width: 80%;
+        margin:0 auto;
     }
 }

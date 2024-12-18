@@ -2,10 +2,13 @@
 
 import { createContext, useState } from "react";
 import CompareView from "../_components/CompareView";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export const ContextApi = createContext();
 
 export default function GlobalContext({children}){
+    const router = useRouter();
+    const searchParams = useSearchParams();
     const [modal,setModal] = useState({status:false,type:null});
     const [compareProducts,setCompareProducts] = useState([]);
     const [trackChanges,setTrackChanges] = useState(null);
@@ -86,6 +89,17 @@ export default function GlobalContext({children}){
         setModal({status:true,type:"COMPARE_VIEW"})
     }
 
+    const updateQueryString = (key, value) => {
+        const params = new URLSearchParams(searchParams.toString());
+        if (value) {
+            params.set(key, value); // Add or update the query parameter
+        } else {
+            params.delete(key); // Remove query if value is null
+        }
+
+        router.push(`?${params.toString()}`,{scroll:false});
+    };
+
 
     return <ContextApi.Provider value={{
         getLocalStorageItems,
@@ -100,7 +114,8 @@ export default function GlobalContext({children}){
         compareProducts,
         setCompareProducts,
         addToCompareProductsHandler,
-        trackChanges
+        trackChanges,
+        updateQueryString
     }}>
         {modal.type === "COMPARE_VIEW" && <CompareView />}
         {children}

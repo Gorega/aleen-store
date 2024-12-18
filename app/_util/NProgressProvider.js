@@ -1,31 +1,34 @@
 'use client';
 
-import { useContext, useEffect } from 'react';
-import NProgress from 'nprogress';
+import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
+import { useContext, useEffect, useState } from 'react';
 import { ContextApi } from './GlobalContext';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
-const NProgressProvider = () => {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+const NProgressProvider = ({ children }) => {
+  const pathName = usePathname();
+  const [currentPath,setCurrentPath] = useState("");
   const {setModal} = useContext(ContextApi);
 
-  useEffect(() => {
-    const handleStart = () => NProgress.start();
-    const handleStop = () => {
-      NProgress.done()
-      setModal({status:false,type:null})
-    };
+  useEffect(()=>{
+    if(currentPath !== pathName){
+      setCurrentPath(pathName)
+      setModal({type:null,status:false})
+      document.body.style.overflow = "auto"
+    }
+  },[pathName])
 
-    handleStart(); // Start progress bar on route change
-    handleStop();  // Stop progress bar after rendering
-
-    return () => {
-      handleStop();
-    };
-  }, [pathname,searchParams]);
-
-  return null; // This component doesn't render anything
+  return (
+    <>
+      {children}
+      <ProgressBar
+        height="4px"
+        color="#57CDBF"
+        options={{ showSpinner: false }}
+        shallowRouting
+      />
+    </>
+  );
 };
 
 export default NProgressProvider;

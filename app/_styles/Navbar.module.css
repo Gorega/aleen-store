@@ -98,17 +98,43 @@
     height:30px;
 }
 
+.nav.transparent .searchBar{
+    color:#fff;
+}
+
 .nav .searchBar{
     width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border:1px solid rgba(0,0,0,.1);
+    border-radius: 25px;
+    padding:0 10px;
+}
+
+.nav .searchBar svg{
+    width: 25px;
+    height:25px;
 }
 
 .nav .searchBar input{
     width: 100%;
     height:100%;
     padding:15px;
-    font-size:12px;
+    font-size:14px;
     font-weight: 400;
     text-align: right;
+    background-color: transparent;
+    border:none;
+}
+
+.nav.transparent .searchBar input,nav.transparent .searchBar input::placeholder{
+    color:#fff;
+}
+
+.nav .searchBar input:focus{
+    border:none;
+    outline: none;
 }
 
 .phoneList{
@@ -125,6 +151,8 @@
     background-color: #fff;
     animation-name: slideInFromRight;
     animation-duration: .7s;
+    overflow:auto;
+    direction: ltr;
 }
 
 .phoneList ul{
@@ -183,7 +211,7 @@
 .phoneList .close{
     position: absolute;
     top:0;
-    left:-46px;
+    left:0;
     width: 45px;
     height:45px;
     background-color: black;
@@ -209,6 +237,7 @@
     animation-name: placeholderAnimate;
     animation-duration: .3s;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    cursor: default;
 }
 
 .placeholder .content{
@@ -221,17 +250,18 @@
     display:flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
     list-style: none;
     padding:0;
 }
 
 .placeholder .content ul li{
     position: relative;
-    margin-bottom:12px;
-    text-align: right;
     font-size:14px;
     transition: .2s ease-in-out;
     text-wrap: nowrap;
+    width: fit-content;
+    margin-bottom:36px;
 }
 
 .placeholder .content ul li::after{
@@ -248,20 +278,37 @@
     margin-right:5px;
 }
 
-.placeholder .content .views{
+.placeholder .content .views,.placeholder .content .spinner{
     margin-left:25px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    gap:15px;
 }
 
 .placeholder .content .views .view{
-    margin-left:15px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
 }
 
-.placeholder .content .views .view .image{
+.placeholder .content .views .view:hover{
+    transform: translateY(15px);
+}
+
+.placeholder .content .spinner{
+    animation-name: brightInAndOut;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.placeholder .content .views .view .image,.placeholder .content .spinner .view .image{
     width:300px;
     height:320px;
+}
+
+.placeholder .content .spinner .view .image{
+    background-color: #d9d9d9;
 }
 
 .placeholder .content .views .view .image .img{
@@ -270,14 +317,26 @@
     object-fit: cover;
 }
 
-.placeholder .content .views .view .info{
-    margin-top:-15px;
+.placeholder .content .views .view .info h4{
+    margin:7px 0;
+}
+
+.placeholder .content .spinner .view .info h4{
+    width:160px;
+    height:15px;
+    background-color: #d9d9d9;
+}
+
+.placeholder .content .spinner .view .info p{
+    width:120px;
+    height:11px;
+    background-color: #d9d9d9;
 }
 
 .placeholder .content .views .view .info p{
-    margin-top:-15px;
     font-size: 14px;
     font-weight: 400;
+    margin:0;
 }
 
 .cart{
@@ -289,9 +348,11 @@
     height:100%;
     background-color: #fff;
     z-index: 4;
-    /* animation-name: slideInFromLeft; */
+    animation-name: slideInFromLeft;
     animation-duration: .7s;
     color:black;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
 }
 
 .cart .head{
@@ -316,10 +377,7 @@
 }
 
 .cart .top{
-    position: absolute;
-    top:0;
-    right:0;
-    width: 100%;
+    position: relative;
 }
 
 .cart .top .head{
@@ -364,12 +422,9 @@
     width: 100%;
     height:100%;
     overflow: auto;
-    position: relative;
-    top:140px;
 }
 
 .cart .body .items{
-    height: 550px;
     overflow: auto;
     padding:0 15px;
 }
@@ -471,13 +526,14 @@
 }
 
 .cart .payment{
-    position: absolute;
-    bottom:0;
-    right:0;
+    position: relative;
+    bottom: 0;
+    height: max-content;
     width: 100%;
-    height:160px;
     background-color: #F1F1F1;
+    justify-self: flex-end;
     margin:0;
+    height: 100%;
 }
 
 .cart .payment div{
@@ -620,6 +676,113 @@
     border: 1px solid #d9d9d9;;
 }
 
+.searchView{
+    position: absolute;
+    top:100px;
+    width: 17%;
+    min-height: max-content;
+    max-height: 360px;
+    background-color: #fff;
+    padding:25px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    animation-name: showIn;
+    animation-duration: 1s;
+    color:black;
+    overflow: auto;
+}
+
+.searchView .empty{
+    font-size:12px;
+    font-weight: 300;
+}
+
+.searchView.hide{
+    display: none;
+}
+
+.searchView .products{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    color:black;
+}
+
+.searchView .products .view,.searchView .products .product{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:15px;
+    cursor: pointer;
+}
+
+.searchView .products .view{
+    animation-name: brightInAndOut;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.searchView .products .view .image{
+    width: 60px;
+    height:60px;
+    background-color: #d9d9d9;
+}
+
+.searchView .products .view h4{
+    width: 100px;
+    height:15px;
+    background-color: #d9d9d9;
+    margin:0;
+}
+
+.searchView .products .view span{
+    display: block;
+    width: 50px;
+    height:10px;
+    background-color: #d9d9d9;
+    margin-top:10px;
+}
+
+.searchView .products .product .image{
+    width: 60px;
+    height:60px;
+}
+
+.searchView .products .product .image .img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.searchView .products .product h4{
+    font-size:15px;
+    font-weight: 500;
+    margin:0;
+    text-wrap: nowrap;
+}
+
+.searchView .products .product span{
+    font-size:13px;
+}
+
+.searchView .more{
+    margin-top:15px;
+    width: 100%;
+    border-top:1px solid #d9d9d9;
+    color:black;
+    font-size:14px;
+    padding:15px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:7px;
+}
+
+.searchView .more svg{
+    width: 25px;
+    height:25px;
+}
+
 @media  (min-width: 320px) and (max-width:762px){
     .phoneList{
         width:65%
@@ -697,5 +860,25 @@
         opacity: 1;
         visibility: visible;
         margin-top: 0;
+    }
+}
+
+@keyframes showIn {
+    from{
+        opacity: 0;
+        visibility: hidden;
+    }
+    to{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes brightInAndOut {
+    from{
+        opacity: .5;
+    }
+    to{
+        opacity: 1;
     }
 }

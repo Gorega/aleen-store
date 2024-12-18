@@ -1,0 +1,35 @@
+html,body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    caret-color: transparent;
+}
+
+html,body input,html,body input textarea{
+    caret-color: auto;
+}
+
+body a{
+    text-decoration: none;
+    color:unset
+}
+
+.modal{
+    z-index: 4;
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+}
+
+
+
+/* extra large devices */
+
+/* @media (min-width: 1025px) and (max-width:1270px){
+    .container {
+        width: 80%;
+    }
+} */

@@ -1,5 +1,6 @@
 .main{
     min-height: 800px;
+    
 }
 
 .head{
@@ -75,9 +76,13 @@
     height:35px
 }
 
+.productsContainer{
+    animation-name: showIn;
+    animation-duration: 2s;
+}
+
 
 @media  (min-width: 320px) and (max-width:1270px){
-
     .head{
         display: block;
     }
@@ -109,4 +114,17 @@
         background-color: transparent;
     }
 
+}
+
+
+
+@keyframes showIn {
+    from{
+        opacity: 0;
+        visibility: hidden;
+    }
+    to{
+        opacity: 1;
+        visibility: visible;
+    }
 }

@@ -4,11 +4,9 @@ const productSchema = new mongoose.Schema({
     title:String,
     desc:String,
     price:Number,
-    view:String,
     views:Array,
     stars:Number,
-    section:String,
-    more:Array
+    section:String
 },{timestamps:true})
 
 const Product = mongoose.models.product || mongoose.model("product",productSchema);

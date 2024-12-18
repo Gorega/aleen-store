@@ -9,13 +9,14 @@ import { fetchData } from "../_util/fetchData";
 export default async function page() {
 
   const sections = await fetchData("api/sections");
+  const tags = await fetchData("api/tags");
   const products = await fetchData("api/products");
 
   return (
     <>
     <Header />
     <Sections storeMenu={sections} />
-    <Shopping sections={sections} />
+    <Shopping tags={tags} />
     <Popular products={products}  />
     <Services />
     </>

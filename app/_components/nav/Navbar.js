@@ -4,9 +4,11 @@ import PhoneList from "./PhoneList";
 import styles from "../../_styles/Navbar.module.css";
 import PlaceholderView from "./PlaceholderView";
 import CartView from "./cartModal/CartView";
+import SearchView from "./SearchView";
 import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next-nprogress-bar";
 import { ContextApi } from "@/app/_util/GlobalContext";
 
 
@@ -17,6 +19,9 @@ export default function Navbar({storeMenu}){
     const [currentPlaceholderView,setCurrentPlaceholderView] = useState(null);
     const [cartItems,setCartItems] = useState([]);
     const [favouriteItems,setFavouriteItems] = useState([]);
+    const [loading,setLoading] = useState(false);
+    const [searchValue,setSearchValue] = useState("");
+    const [searchedProducts,setSearchedProducts] = useState([]);
 
     const showPhoneListHandler = ()=>{
         setModal({status:true,type:"PHONE_LIST"})
@@ -30,6 +35,19 @@ export default function Navbar({storeMenu}){
         setCurrentPlaceholderView(index)
     }
 
+    const searchBarHandler = (e)=>{
+        setSearchValue(e.target.value);
+        fetchSearchedProducts(e.target.value);
+    }
+
+    const fetchSearchedProducts = async(title)=>{
+        setLoading(true)
+        const response = await fetch(`/api/products?title=${title}`);
+        const data = await response.json();
+        setSearchedProducts(data);
+        setLoading(false);
+    }
+
     useEffect(()=>{
 
         getLocalStorageItems("cart",setCartItems);
@@ -39,20 +57,18 @@ export default function Navbar({storeMenu}){
 
 
     return <div className={styles.navbar} onMouseLeave={()=> setCurrentPlaceholderView(null)}>
-    <nav className={`${styles.nav} container ${path === "/" ? styles.transparent : ""}`}>
+    <nav className={`${styles.nav} ${path === "/" ? styles.transparent : ""}`}>
         <div className={styles.logo} onClick={()=> router.push("/")}>
             Aleen Store
         </div>
         <div className={styles.list}>
             <ul>
                 {storeMenu?.map((li,index)=>{
-                    return <Link key={index} href={`/collections/${li.section}`}>
-                            <li onMouseOver={()=> showPlaceholderViewHanlder(index)}>
-                                {li.title}
+                    return <li key={index} onMouseOver={()=> showPlaceholderViewHanlder(index)}>
+                                <Link href={`/collections/${li.section}`}>{li.title}</Link>
                                 {li.sub.length > 0 && <span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg></span>}
                                 {(li.sub.length > 0 && currentPlaceholderView === index) && <PlaceholderView li={storeMenu[currentPlaceholderView]} />}
                             </li>
-                        </Link>
                 })}
             </ul>
         </div>
@@ -61,7 +77,17 @@ export default function Navbar({storeMenu}){
             {modal.type === "PHONE_LIST" && <PhoneList list={storeMenu} closeModal={closeModalHandler} />}
         </div>
         <div className={styles.searchBar}>
-            <input name="search" type="search" placeholder="بحث عن منتجات" />
+            <svg stroke="currentColor" fill="currentColor" strokeWidth="0" version="1.1" id="search" x="0px" y="0px" viewBox="0 0 24 24" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><g><path d="M20.031,20.79c0.46,0.46,1.17-0.25,0.71-0.7l-3.75-3.76c1.27-1.41,2.04-3.27,2.04-5.31
+            c0-4.39-3.57-7.96-7.96-7.96s-7.96,3.57-7.96,7.96c0,4.39,3.57,7.96,7.96,7.96c1.98,0,3.81-0.73,5.21-1.94L20.031,20.79z
+            M4.11,11.02c0-3.84,3.13-6.96,6.96-6.96c3.84,0,6.96,3.12,6.96,6.96c0,3.84-3.12,6.96-6.96,6.96C7.24,17.98,4.11,14.86,4.11,11.02
+            z"></path></g></svg>
+            <input name="search" type="search" placeholder="بحث عن منتجات" value={searchValue} onChange={searchBarHandler} onKeyDown={(e)=>{
+                if(e.key === "Enter"){
+                    router.push(`/search?name=${searchValue}`)
+                    setSearchValue("")
+                }
+            }} />
+            {searchValue && <SearchView products={searchedProducts} loading={loading} searchValue={searchValue} setSearchValue={setSearchValue} />}
         </div>
         <div className={styles.control}>
             <ul>

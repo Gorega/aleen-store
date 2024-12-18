@@ -1,12 +1,14 @@
 .services{
     margin-top:120px;
     margin-bottom:50px;
+    padding:0 25px;
 }
 
 .services .sections,.services .sections .section{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: default;
 }
 
 .services .sections{

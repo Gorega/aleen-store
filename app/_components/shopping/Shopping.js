@@ -6,7 +6,7 @@ import List from "../List";
 import { useRef, useState, useEffect } from "react";
 
 
-export default function Shopping({sections}){
+export default function Shopping({tags}){
     const [products,setProducts] = useState([]);
     const [currentTag,setCurrentTag] = useState("makeup");
     const scrollAmount = 250;
@@ -28,7 +28,12 @@ export default function Shopping({sections}){
     }
 
     const viewDefinedProductsHandler = (dataset)=>{
-        setCurrentTag(dataset)
+        setCurrentTag(null)
+
+        // apply async method to implement animation
+        setTimeout(()=>{
+            setCurrentTag(dataset)
+        },0)
     }
 
     useEffect(()=>{
@@ -41,7 +46,7 @@ export default function Shopping({sections}){
     },[currentTag])
 
 
-    return <main className={`${styles.main} container`}>
+    return <main className={styles.main}>
         <div className={styles.head}>
             <h2>تسوق من أقسامنا</h2>
             <div className={styles.holder}>
@@ -50,21 +55,19 @@ export default function Shopping({sections}){
                         <span className={styles.leftArrow} onClick={moveToLeftHandler}><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M15.41 16.59 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path></svg></span>
                 </div>
                 <div className={styles.sections} ref={sectionsRef}>
-                    {sections?.map((item)=>{
-                        if(item.sub.length > 0){
-                            return item.sub.map((li,index)=>{
-                                return <div className={styles.section} key={index} onClick={()=> {
-                                    viewDefinedProductsHandler(item.section)
+                    {tags?.map((tag,index)=>{
+                        return <div className={styles.section} key={index} onClick={()=> {
+                                         viewDefinedProductsHandler(tag.section)
                                 }}>
-                                    <Image className={styles.img} src={li.logo} width={100} height={100} alt={li.title} />
-                                    <h4>{li.title}</h4>
-                                    </div>
-                            })
-                        }
+                                <Image className={styles.img} src={tag.logo} width={100} height={100} alt={tag.title} />
+                                <h4>{tag.title}</h4>
+                            </div>
                     })}
                 </div>
             </div>
         </div>
-        <List products={products} />
+        <div className={styles.productsContainer}>
+            <List products={products} link={"/collections"} />
+        </div>
     </main>
 }

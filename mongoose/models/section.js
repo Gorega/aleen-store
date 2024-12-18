@@ -6,7 +6,6 @@ const sectionSchema = new mongoose.Schema({
     section:String,
     order:Number,
     sub:Array,
-    views:Array    
 },{timestamps:true})
 
 const Section = mongoose.models.section || mongoose.model("section",sectionSchema);

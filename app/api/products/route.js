@@ -6,9 +6,11 @@ export async function GET(request){
     if(request.method === "GET"){
         const {searchParams} = new URL(request.url);
         const section = searchParams.get("section");
+        const title = searchParams.get("title");
         
         const query = {};
         if(section) query.section = section;
+        if(title) query.title = {$regex: title, $options: 'i' };
 
         const products = await Product.find(query);
         return Response.json(products);

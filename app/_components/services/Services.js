@@ -47,7 +47,7 @@ export default function Services(){
     }]
 
 
-    return <div className={`${styles.services} container`}>
+    return <div className={styles.services}>
         <div className={styles.sections}>
             {showIndicators
             ?
