@@ -1,24 +1,24 @@
-import { fetchData } from "../../../_util/fetchData";
+// import { fetchData } from "../../../_util/fetchData";
 import CollectionPage from "../../../_components/CollectionPage";
-import {url} from "@/mongoose/url";
+// import {url} from "@/mongoose/url";
 
-const grapSection = async (section)=>{
-    const response = await fetch(`${url}api/sections/${section}`);
-    const data = await response.json();
-    return data;
-}
+// const grapSection = async (section)=>{
+//     const response = await fetch(`${url}api/sections/${section}`);
+//     const data = await response.json();
+//     return data;
+// }
 
-export default async function page({params}){
-    const {section} = await params;
-    const singleSection = await grapSection(section);
-    const products = await fetchData(`api/products/${section}`);
-    const sections = await fetchData("api/sections");    
+export default async function page(){
+    // const {section} = await params;
+    // const singleSection = await grapSection(section);
+    // const products = await fetchData(`api/products/${section}`);
+    // const sections = await fetchData("api/sections");    
 
     return <>
         <CollectionPage
-            products={products.data}
-            sections={sections}
-            section={singleSection}
+            products={[]}
+            sections={[]}
+            section={[]}
         />
     </>
 }

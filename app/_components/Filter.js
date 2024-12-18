@@ -1,10 +1,7 @@
-
-import { useContext } from "react";
 import styles from "../_styles/Filter.module.css";
-import { ContextApi } from "../_util/GlobalContext";
+import UpdateQueryString from "../_util/UpdateQueryString";
 
 export default function Filter({section,setListViewOrder,setFilteredProducts,sortBy}){
-    const {updateQueryString} = useContext(ContextApi);
 
     const orderList = [{
         name:"list",
@@ -23,7 +20,7 @@ export default function Filter({section,setListViewOrder,setFilteredProducts,sor
     const filterHandler = async (e)=>{
         const response = await fetch(`/api/products/${section.section}?sort_by=${e.target.value}`);
         const data = await response.json();
-        updateQueryString("sort_by",e.target.value)
+        UpdateQueryString("sort_by",e.target.value)
         setFilteredProducts(data.data);
     }
 

@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "../_styles/CollectionPage.module.css";
-import { useRef, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 import { useRouter } from "next-nprogress-bar";
 import Filter from "./Filter";
 import Link from "next/link";
@@ -13,7 +13,6 @@ export default function Collection({products,sections,section}){
     const moveAmount = 250;
     const [listViewOrder,setListViewOrder] = useState("");
     const [filteredProducts,setFilteredProducts] = useState(products);
-    
 
     const moveToRightHandler = ()=>{
         listRef.current.scrollBy({
@@ -51,7 +50,9 @@ export default function Collection({products,sections,section}){
         </div>
         :
         <>
-        <Filter section={section} setListViewOrder={setListViewOrder} setFilteredProducts={setFilteredProducts} sortBy={true} />
+        <Suspense>
+             <Filter section={section} setListViewOrder={setListViewOrder} setFilteredProducts={setFilteredProducts} sortBy={true} />
+        </Suspense>
         <List products={filteredProducts} listViewOrder={listViewOrder} />
         </>}
     </div>

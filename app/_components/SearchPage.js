@@ -1,12 +1,12 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../_styles/SearchPage.module.css";
 import List from "./List";
 import Filter from "./Filter";
-import { ContextApi } from "../_util/GlobalContext";
 import { useRouter } from "next-nprogress-bar";
 import { usePathname, useSearchParams } from "next/navigation";
+import UpdateQueryString from "../_util/UpdateQueryString";
 
 export default function SearchPage(){
     const router = useRouter();
@@ -16,7 +16,6 @@ export default function SearchPage(){
     const [searchedProducts,setSearchedProducts] = useState([]);
     const [listViewOrder,setListViewOrder] = useState("");
     const [loading,setLoading] = useState(false);
-    const {updateQueryString} = useContext(ContextApi);
     const searchParamsValue = searchParams.get("name");
 
 
@@ -58,7 +57,7 @@ export default function SearchPage(){
             <input type="search" name="search" placeholder="بحث" value={searchValue} onChange={(e)=> setSearchValue(e.target.value)} onKeyDown={(e)=>{
                 if(e.key === "Enter"){
                     searchHandler(searchValue)
-                    updateQueryString("name",searchValue)
+                    UpdateQueryString("name",searchValue)
                 }
             }} />
         </div>
