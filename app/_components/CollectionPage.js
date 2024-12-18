@@ -10,22 +10,20 @@ import List from "./List";
 export default function Collection({products,sections,section}){
     const router = useRouter();
     const listRef = useRef(null);
-    const moveAmount = 250;
+    const scrollAmount = 250;
     const [listViewOrder,setListViewOrder] = useState("");
     const [filteredProducts,setFilteredProducts] = useState(products);
 
     const moveToRightHandler = ()=>{
-        listRef.current.scrollBy({
-            left:+moveAmount,
-            behavior:"smooth"
-        })
+        if(listRef.current) {
+            listRef.current.scrollLeft += scrollAmount;
+          }
     }
 
-    const moveToLeftHanlder = ()=>{
-        listRef.current.scrollBy({
-            left:-moveAmount,
-            behavior:"smooth"
-        })
+    const moveToLeftHandler = () => {
+        if(listRef.current) {
+            listRef.current.scrollLeft -= scrollAmount;
+        }
     }
 
 
@@ -40,7 +38,7 @@ export default function Collection({products,sections,section}){
                         return <li key={index} onClick={()=> router.push(`/collections/${li.section}`)}>{li.title}</li>
                      })}
                 </ul>
-                <button className={styles.leftArrow} onClick={moveToLeftHanlder}><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M15.41 16.59 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path></svg></button>
+                <button className={styles.leftArrow} onClick={moveToLeftHandler}><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M15.41 16.59 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path></svg></button>
             </div>
         </div>
         {products.length <= 0

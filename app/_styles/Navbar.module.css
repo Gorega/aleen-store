@@ -21,7 +21,7 @@
 }
 
 .nav.transparent .logo,.nav.transparent .phoneListButton{
-    margin-right: 40px;
+    margin-right: 26px;
 }
 
 .nav .phoneListButton{
@@ -143,7 +143,7 @@
     top:0;
     right: 0;
     height:100vh;
-    width: 400px;
+    width: 320px;
     color:black;
     text-align: right;
     z-index: 4;
@@ -344,7 +344,7 @@
     position: absolute;
     top:0;
     left:0;
-    width: 400px;
+    width: 320px;
     height:100%;
     background-color: #fff;
     z-index: 4;

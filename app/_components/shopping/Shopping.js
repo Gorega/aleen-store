@@ -14,17 +14,15 @@ export default function Shopping({tags}){
 
     
     const moveToRightHandler = ()=>{
-        sectionsRef.current.scrollBy({
-            left:+scrollAmount,
-            behavior:"smooth"
-        })
+        if (sectionsRef.current) {
+            sectionsRef.current.scrollLeft += scrollAmount;
+          }
     }
 
-    const moveToLeftHandler = ()=>{
-        sectionsRef.current.scrollBy({
-            left:-scrollAmount,
-            behavior:"smooth"
-        })
+    const moveToLeftHandler = () => {
+        if (sectionsRef.current) {
+          sectionsRef.current.scrollLeft -= scrollAmount;
+        }
     }
 
     const viewDefinedProductsHandler = (dataset)=>{
