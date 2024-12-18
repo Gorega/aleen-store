@@ -1,8 +1,8 @@
 import styles from "../_styles/Filter.module.css";
-import UpdateQueryString from "../_util/UpdateQueryString";
+import useUpdateQueryString from "../_util/useUpdateQueryString";
 
 export default function Filter({section,setListViewOrder,setFilteredProducts,sortBy}){
-
+    const {updateSearchParams} = useUpdateQueryString();
     const orderList = [{
         name:"list",
         view:<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.41 34.69"><rect width="10.09" height="10.09"></rect><rect y="12.3" width="10.09" height="10.09"></rect> <rect y="24.61" width="10.09" height="10.09"></rect> <rect x="12.16" width="10.09" height="10.09"></rect> <rect x="12.16" y="12.3" width="10.09" height="10.09"></rect> <rect x="12.16" y="24.61" width="10.09" height="10.09"></rect> <rect x="24.32" width="10.09" height="10.09"></rect> <rect x="24.32" y="12.3" width="10.09" height="10.09"></rect> <rect x="24.32" y="24.61" width="10.09" height="10.09"></rect> </svg>,
@@ -20,7 +20,7 @@ export default function Filter({section,setListViewOrder,setFilteredProducts,sor
     const filterHandler = async (e)=>{
         const response = await fetch(`/api/products/${section.section}?sort_by=${e.target.value}`);
         const data = await response.json();
-        UpdateQueryString("sort_by",e.target.value)
+        updateSearchParams("sort_by",e.target.value)
         setFilteredProducts(data.data);
     }
 

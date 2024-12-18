@@ -6,7 +6,7 @@ import List from "./List";
 import Filter from "./Filter";
 import { useRouter } from "next-nprogress-bar";
 import { usePathname, useSearchParams } from "next/navigation";
-import UpdateQueryString from "../_util/UpdateQueryString";
+import useUpdateQueryString from "../_util/useUpdateQueryString";
 
 export default function SearchPage(){
     const router = useRouter();
@@ -16,6 +16,7 @@ export default function SearchPage(){
     const [searchedProducts,setSearchedProducts] = useState([]);
     const [listViewOrder,setListViewOrder] = useState("");
     const [loading,setLoading] = useState(false);
+    const {updateSearchParams} = useUpdateQueryString();
     const searchParamsValue = searchParams.get("name");
 
 
@@ -57,7 +58,7 @@ export default function SearchPage(){
             <input type="search" name="search" placeholder="بحث" value={searchValue} onChange={(e)=> setSearchValue(e.target.value)} onKeyDown={(e)=>{
                 if(e.key === "Enter"){
                     searchHandler(searchValue)
-                    UpdateQueryString("name",searchValue)
+                    updateSearchParams("name",searchValue)
                 }
             }} />
         </div>
