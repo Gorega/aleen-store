@@ -3,13 +3,11 @@
 import Image from "next/image"
 import styles from "../_styles/Item.module.css";
 import Link from "next/link";
-import { useRouter } from "next-nprogress-bar";
 import { ContextApi } from "@/app/_util/GlobalContext";
 import { useContext, useEffect, useState } from "react";
 import ItemView from "./ItemView";
 
 export default function Item({content,tableShape}){
-    const router = useRouter();
     const [isInCart,setIsInCart] = useState(false);
     const [isInFavourite,setIsInFavourite] = useState(false);
     const {addToCartHandler,
