@@ -34,7 +34,7 @@ export default function Item({content,tableShape}){
     },[trackChanges])
     
     return <div className={`${styles.item} ${tableShape ? styles.tableView : ""}`}>
-            <div className={styles.image} onClick={()=> router.push(`/collections/${content.section}/products/${content._id}`)}>
+            <div className={styles.image}>
                 <Image className={styles.productImg} src={content.views[0]} width={300} height={300} alt={content.title} />
                 <Image className={`${styles.productImg} ${styles.slidein}`} src={content.views[1]} width={300} height={300} alt={content.title} />
             </div>

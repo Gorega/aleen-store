@@ -201,7 +201,7 @@
 .item .text h4{
     font-size:16px;
     margin:0;
-    padding:10px;
+    padding:10px 10px 0 10px;
     flex-wrap: nowrap;
 }
 
@@ -212,9 +212,11 @@
 .item .text span{
     font-size:12px;
     font-weight: 400;
+    padding:10px;
 }
 
 @media (min-width: 320px) and (max-width:768px){
+
     .item .image{
         height:200px;
     }
@@ -226,17 +228,27 @@
     .item.tableView .text{
         margin:0;
     }
+
+    .item .text span{
+        padding:0;
+    }
 }
 
 @media  (min-width: 766px) and (max-width:992px){
     .item .image{
         height:270px;
     }
+    .item .text span{
+        padding:0;
+    }
 }
 
 @media  (min-width: 990px) and (max-width:1200px){
     .item .image{
         height:310px;
+    }
+    .item .text span{
+        padding:0;
     }
 }
 
@@ -311,7 +323,7 @@
     
     .item .text h4{
         position: absolute;
-        bottom:-50px;
+        bottom:-40px;
         right: 0;
     }
     

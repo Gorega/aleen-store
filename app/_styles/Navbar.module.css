@@ -142,7 +142,7 @@
     position: absolute;
     top:0;
     right: 0;
-    height:100vh;
+    height: 100vh;
     width: 320px;
     color:black;
     text-align: right;
@@ -152,11 +152,13 @@
     animation-name: slideInFromRight;
     animation-duration: .7s;
     overflow:auto;
+    white-space:nowrap;
     direction: ltr;
 }
 
 .phoneList ul{
     padding:0;
+    height: 100%;
 }
 
 .phoneList ul li{
@@ -344,7 +346,7 @@
     position: absolute;
     top:0;
     left:0;
-    width: 320px;
+    width: 400px;
     height:100%;
     background-color: #fff;
     z-index: 4;
@@ -431,10 +433,11 @@
 
 .cart .body .items .item{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap:15px;
     margin-bottom:25px;
-    width: 100%;
+    position: relative;
 }
 
 .cart .body .items .item .image{
@@ -449,34 +452,38 @@
 }
 
 .cart .body .items .item .content{
-    margin-right:15px;
-    flex:1;
+    display: block;
+    flex-grow: 1;
 }
 
 .cart .body .items .item .content h4{
     margin:0;
-    font-size:17px;
+    font-size:15px;
     margin-bottom:7px;
 }
 
 .cart .body .items .item .content span{
-    font-size:15px;
+    font-size:14px;
     font-weight: 400;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .cart .body .items .item .content .counter{
     margin-top:15px;
-    display: flex;
     align-items: center;
-    gap:40px;
+    gap:15px;
+    display: flex;
 }
 
 .cart .body .items .item .content .counter span.addedPrice{
     color:red;
+    text-wrap: nowrap;
 }
 
 .cart .body .items .item .control{
+    position: absolute;
+    top:0;
+    left:0;
     font-size:15px;
     color:black;
     cursor: pointer;
@@ -488,6 +495,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-self: flex-end;
 }
 
 .cart .body .advantages{
@@ -784,12 +792,19 @@
 }
 
 @media  (min-width: 320px) and (max-width:762px){
+    .cart{
+        width: 320px;
+    }
     .phoneList{
         width:65%
     }
 }
 
 @media  (min-width: 320px) and (max-width:1360px){
+
+    .cart{
+        width: 320px;
+    }
 
     .phoneList{
         display: block;

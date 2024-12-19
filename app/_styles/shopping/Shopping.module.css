@@ -25,12 +25,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    overflow-x: hidden;
     position: relative;
     z-index: 2;
     margin-bottom:36px;
     white-space:nowrap;
     scroll-behavior: smooth;
+    overflow-x: auto;
+}
+
+.head .sections::-webkit-scrollbar{
+    display: none
 }
 
 .head .sections .section{

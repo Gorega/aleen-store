@@ -43,6 +43,11 @@
     padding:0;
     white-space:nowrap;
     scroll-behavior: smooth;
+    overflow-x: auto;
+}
+
+.collection .sections .tags .list::-webkit-scrollbar{
+    display: none
 }
 
 .collection .sections .tags .list li{

@@ -1,5 +1,5 @@
 .container{
-    margin-top:50px;
+    margin:50px auto;
     padding:0 15px;
     caret-color: transparent;
 }
@@ -25,7 +25,7 @@
 .container .product .images .view{
     position: relative;
     margin-bottom:15px;
-    width: 60px;
+    width: 52px;
     height:60px;
     flex:1;
 }
@@ -353,8 +353,13 @@
     animation-name: modalAnimate;
     animation-duration: 1s;
     width: 30%;
-    height:max-content;
-}   
+    height:40%;
+    overflow: auto;
+}
+
+.question{
+    height: 80%;
+}
 
 .policy .close,.question .close{
     position: absolute;
@@ -469,6 +474,7 @@
 }
 
 @media (min-width: 320px) and (max-width:768px){
+
     .container .product{
         display: flex;
         flex-direction: column;
@@ -496,6 +502,7 @@
         right:0;
         width: 360px;
         height:360px;
+        visibility: hidden;
     }
 
     .container .product .content{
