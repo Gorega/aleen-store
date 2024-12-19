@@ -60,6 +60,7 @@
 
 .header .pages ul li{
     cursor: pointer;
+    color:#fff
 }
 
 .header .pages ul li:hover svg,.header .pages ul li.active svg{

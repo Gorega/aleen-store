@@ -85,6 +85,7 @@
     flex-grow: 1;
     height:46px;
     transition: .2s ease-in-out;
+    text-wrap: nowrap;
 }
 
 .item .content .cart button:hover{

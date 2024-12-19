@@ -500,9 +500,9 @@
         position: relative;
         top:0;
         right:0;
-        width: 360px;
-        height:360px;
-        visibility: hidden;
+        width: 0;
+        height:0;
+        visibility:hidden
     }
 
     .container .product .content{
