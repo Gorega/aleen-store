@@ -46,7 +46,7 @@ export default function Footer({storeMenu}){
             </div>
         </div>
         <div className={styles.outer}>
-            <span>تصميم وتطوير Gorega</span>
+            <span>تصميم وتطوير laialy</span>
         </div>
     </footer>
 }
